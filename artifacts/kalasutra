@@ -1,0 +1,40 @@
+import { Link } from 'wouter';
+
+export function Button({ 
+  children, 
+  variant = 'primary', 
+  className = '', 
+  href,
+  ...props 
+}: { 
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  className?: string;
+  href?: string;
+  [key: string]: any;
+}) {
+  const baseClasses = "inline-flex items-center justify-center tracking-wide uppercase text-xs font-semibold rounded-sm transition-all duration-300 px-8 py-4";
+  
+  const variants = {
+    primary: "bg-primary text-white hover:bg-[#a8511e] hover-elevate",
+    secondary: "bg-espresso text-white hover:bg-black hover-elevate",
+    outline: "border border-accent text-foreground hover:bg-accent hover:text-white",
+    ghost: "bg-transparent text-foreground hover:text-primary",
+  };
+
+  const classes = `${baseClasses} ${variants[variant]} ${className}`;
+
+  if (href) {
+    return (
+      <Link href={href} className={classes} {...props}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <button className={classes} {...props}>
+      {children}
+    </button>
+  );
+}

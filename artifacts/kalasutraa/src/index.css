@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+  
+  --color-luxury: hsl(var(--luxury));
+  --color-espresso: hsl(var(--espresso));
+  
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --button-outline: rgba(0, 0, 0, 0.1);
+  --badge-outline: rgba(0, 0, 0, 0.05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.08);
+
+  --background: 38 55% 96%; /* #FBF7F0 warm ivory */
+  --foreground: 28 27% 11%; /* #231B14 charcoal */
+  --border: 37 33% 86%; /* #E8DFD0 */
+  --card: 0 0% 100%; /* #FFFFFF */
+  --card-foreground: 28 27% 11%;
+  --card-border: 37 33% 86%;
+  
+  --sidebar: 38 55% 96%;
+  --sidebar-foreground: 28 27% 11%;
+  --sidebar-border: 37 33% 86%;
+  --sidebar-primary: 28 72% 41%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 38 40% 39%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-ring: 28 72% 41%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 28 27% 11%;
+  --popover-border: 37 33% 86%;
+
+  --primary: 28 72% 41%; /* #B5651D terracotta/copper */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 37 33% 86%; /* #E8DFD0 warm sand */
+  --secondary-foreground: 28 27% 11%;
+
+  --muted: 37 33% 86%;
+  --muted-foreground: 28 27% 30%;
+
+  --accent: 38 40% 39%; /* #8A6D3B antique brass/gold */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 352 60% 30%; /* #7A1F2B temple red */
+  --destructive-foreground: 0 0% 100%;
+
+  --input: 37 33% 86%;
+  --ring: 38 40% 39%;
+
+  --luxury: 38 40% 39%;
+  --espresso: 25 39% 13%; /* #2E1F14 espresso brown */
+
+  --app-font-sans: 'Inter', sans-serif;
+  --app-font-serif: 'Cormorant Garamond', serif;
+  --app-font-mono: Menlo, monospace;
+  --radius: 0.25rem; /* 4px subtle rounded corners */
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --background: 25 39% 13%; 
+  --foreground: 38 55% 96%;
+  --border: 38 40% 39%;
+  --card: 28 27% 11%;
+  --card-foreground: 38 55% 96%;
+  --card-border: 38 40% 39%;
+  --sidebar: 25 39% 13%;
+  --sidebar-foreground: 38 55% 96%;
+  --sidebar-border: 38 40% 39%;
+  --sidebar-primary: 28 72% 41%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 38 40% 39%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-ring: 28 72% 41%;
+  --popover: 28 27% 11%;
+  --popover-foreground: 38 55% 96%;
+  --popover-border: 38 40% 39%;
+  --primary: 28 72% 41%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 38 40% 39%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 25 39% 18%;
+  --muted-foreground: 37 33% 86%;
+  --accent: 38 40% 39%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 352 60% 40%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 38 40% 39%;
+  --ring: 38 40% 39%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
