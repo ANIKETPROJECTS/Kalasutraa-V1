@@ -21,9 +21,9 @@ export default function Collection() {
       {/* Collection Hero */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center bg-espresso text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={`https://picsum.photos/seed/${collection.heroImage}/1920/1080`} 
-            alt={collection.title} 
+          <img
+            src={collection.heroImage}
+            alt={collection.title}
             className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/50 to-transparent"></div>

@@ -47,9 +47,9 @@ export default function ProductDetail() {
             {/* Image Gallery */}
             <div className="space-y-4">
               <div className="relative aspect-[3/4] bg-secondary rounded overflow-hidden group">
-                <img 
-                  src={`https://picsum.photos/seed/${product.images[activeImage]}/800/1066`} 
-                  alt={product.title} 
+                <img
+                  src={product.images[activeImage]}
+                  alt={product.title}
                   className="w-full h-full object-cover transition-transform duration-500 origin-center group-hover:scale-150 cursor-zoom-in"
                 />
                 {product.badge && (
@@ -65,7 +65,7 @@ export default function ProductDetail() {
                     onClick={() => setActiveImage(i)}
                     className={`aspect-square bg-secondary rounded overflow-hidden border-2 transition-colors ${activeImage === i ? 'border-primary' : 'border-transparent hover:border-border'}`}
                   >
-                    <img src={`https://picsum.photos/seed/${img}/200/200`} alt="" className="w-full h-full object-cover" />
+                    <img src={img} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

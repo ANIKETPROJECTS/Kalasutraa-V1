@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useSEO } from '../hooks/use-seo';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
@@ -12,20 +13,36 @@ import { CONTACT_INFO } from '../data/constants';
 import { ShieldCheck, Paintbrush, HeadphonesIcon } from 'lucide-react';
 import { Link } from 'wouter';
 
+const heroImages = [
+  'https://kalasutraa.com/cdn/shop/files/ChatGPT_Image_Apr_28_2026_10_26_46_AM.png?v=1780519191&width=1500',
+  'https://kalasutraa.com/cdn/shop/files/1776663425158.png?v=1777287305&width=1500',
+  'https://kalasutraa.com/cdn/shop/files/1776663712669.png?v=1776664171&width=1500',
+  'https://kalasutraa.com/cdn/shop/files/ChatGPT_Image_Apr_28_2026_10_24_15_AM.png?v=1777352097&width=1500',
+];
+
 export default function Home() {
   useSEO({ title: 'Luxury Indian Traditional Art', description: 'Kalasutraa is where heritage breathes and art finds its home.' });
+  const [heroIdx, setHeroIdx] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setHeroIdx(i => (i + 1) % heroImages.length), 5000);
+    return () => clearInterval(t);
+  }, []);
 
   return (
     <Layout>
       {/* 1. Hero */}
       <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center bg-espresso text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://picsum.photos/seed/kalasutra-hero/1920/1080" 
-            alt="Traditional Artisan at work" 
-            className="w-full h-full object-cover opacity-40 mix-blend-luminosity scale-105 animate-pulse"
-            style={{ animationDuration: '20s', animationDirection: 'alternate' }}
-          />
+          {heroImages.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt="Traditional Artisan at work"
+              className={`absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity transition-opacity duration-[2000ms] ${i === heroIdx ? 'opacity-40' : 'opacity-0'}`}
+              loading={i === 0 ? 'eager' : 'lazy'}
+            />
+          ))}
           <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/50 to-transparent"></div>
         </div>
         
@@ -165,7 +182,7 @@ export default function Home() {
                 <div className="group cursor-pointer">
                   <div className="overflow-hidden rounded aspect-square mb-6 bg-secondary relative">
                     <img 
-                      src={`https://picsum.photos/seed/${artisan.photo}/600/600`} 
+                      src={artisan.photo}
                       alt={artisan.name}
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
                       loading="lazy"

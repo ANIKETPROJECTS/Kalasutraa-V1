@@ -8,7 +8,7 @@ export const artisans = [
     craft: 'Pattachitra',
     bio: 'With over four decades of experience, Raghunath Moharana\'s delicate linework and deep understanding of mythology bring a rare spiritual depth to his Pattachitra paintings.',
     pullQuote: 'The brush is merely a vessel. The art flows from devotion.',
-    photo: 'artisan-raghunath'
+    photo: 'https://kalasutraa.com/cdn/shop/files/b2nqSFAKV5HNdGpBZRAaaZdhvL0eAeCaIyyZOt6MTRV6TzDYabXQmuYCwTxc4m1cergTVFfWBvXlHaZs4ELLaRVq-UHkVcadiWUM0HYfXoLj-v-ZLCQRLjUaEleTRp4zXI1WDq7WHr3smwSbelB6E9tlzcL5HtTlSpRput04Sy95IVhxq7u6d-5.jpg?v=1780553551&width=800',
   },
   {
     id: 'lakshman-soren',
@@ -19,7 +19,7 @@ export const artisans = [
     craft: 'Lost-wax Metal Casting',
     bio: 'Specializing in the ancient Dhokra casting technique, Shri Lakshman Soren breathes life into brass and bell metal, preserving a 4,000-year-old metallurgical heritage.',
     pullQuote: 'Fire and metal have a language of their own. I merely translate it.',
-    photo: 'artisan-lakshman'
+    photo: 'https://kalasutraa.com/cdn/shop/files/IMG_20251107_102045309.jpg?v=1780553639&width=800',
   },
   {
     id: 'ananta-maharana',
@@ -30,7 +30,7 @@ export const artisans = [
     craft: 'Pattachitra & Palm Leaf',
     bio: 'Trained under the strict discipline of the gurukul system, Ananta excels in Tala Pattachitra, etching incredibly fine details onto brittle palm leaves.',
     pullQuote: 'Patience is the true ink of palm leaf etching.',
-    photo: 'artisan-ananta'
+    photo: 'https://kalasutraa.com/cdn/shop/files/hFD8G3RcoBc5R409Qn1T_Is_7C6OQ8l6jtzWiCh7i5MGGv7FNf4qn0PQBsjxSU4r4NnhCgj81sfzxGYTRMF-9Q0dQTwRx5mMDm8h4jQvs_hpL8Jirqng2C41Y_kvvcPGYVyzBUC_lNFoLs6gIaJaa0fBdqvs-mlH3dQOzg1ZQgbE1xzhhe6R5z.jpg?v=1780553675&width=800',
   },
   {
     id: 'govind-das',
@@ -41,7 +41,7 @@ export const artisans = [
     craft: 'Stone Carving',
     bio: 'Residing in the sacred city of Vrindavan, Shri Govind Das transforms raw sandstone into divine forms that radiate peace and architectural grandeur.',
     pullQuote: 'The deity already exists within the stone; I only remove what is unnecessary.',
-    photo: 'artisan-govind'
+    photo: 'https://kalasutraa.com/cdn/shop/files/IMG_20251107_114433689.jpg?v=1775217360&width=600',
   },
   {
     id: 'banamali-mohapatra',
@@ -52,7 +52,7 @@ export const artisans = [
     craft: 'Pattachitra',
     bio: 'A legend in his village, Shree Banamali has spent his life ensuring that the natural colors and strict traditional geometry of Pattachitra are not lost to modernization.',
     pullQuote: 'Our ancestors speak to us through these colors.',
-    photo: 'artisan-banamali'
+    photo: 'https://kalasutraa.com/cdn/shop/files/hFD8G3RcoBc5R409Qn1T_Is_7C6OQ8l6jtzWiCh7i5MGGv7FNf4qn0PQBsjxSU4r4NnhCgj81sfzxGYTRMF-9Q0dQTwRx5mMDm8h4jQvs_hpL8Jirqng2C41Y_kvvcPGYVyzBUC_lNFoLs6gIaJaa0fBdqvs-mlH3dQOzg1ZQgbE1xzhhe6R5z.jpg?v=1780553675&width=1000',
   },
   {
     id: 'jagannath-mahapatra',
@@ -63,7 +63,7 @@ export const artisans = [
     craft: 'Pattachitra',
     bio: 'One of the few artists to hold the esteemed title of Shilp Guru, Dr. Mahapatra is a historian and master whose works adorn museums across the globe.',
     pullQuote: 'To paint our heritage is to keep our history alive.',
-    photo: 'artisan-jagannath'
+    photo: 'https://kalasutraa.com/cdn/shop/files/maxresdefault.jpg?v=1776677280&width=1000',
   },
   {
     id: 'raghunath-sahoo',
@@ -74,6 +74,6 @@ export const artisans = [
     craft: 'Wood Sculpture',
     bio: 'Inspired by the monumental carvings of the Sun Temple, Shree Raghunath Sahoo creates wooden sculptures that mimic the weight and grandeur of ancient stone.',
     pullQuote: 'Every grain in the wood dictates the path of the chisel.',
-    photo: 'artisan-sahoo'
-  }
+    photo: 'https://kalasutraa.com/cdn/shop/files/2_artisan.png?v=1775660165&width=1000',
+  },
 ];

@@ -1,0 +1,102 @@
+# Kalasutraa — Extracted Image URLs (from live site)
+
+All URLs point to Shopify's CDN. You can bump quality by changing the `width=` parameter
+(e.g. change `&width=750` to `&width=2400`) or drop the parameter entirely for original size.
+
+⚠️ Files ending `.heic` will NOT display in most browsers/Replit — convert to `.jpg` first.
+⚠️ Some images are reused across different named people/sections on the live site (see notes).
+
+---
+
+## HOME PAGE
+
+**Hero rotating images**
+- https://kalasutraa.com/cdn/shop/files/ChatGPT_Image_Apr_28_2026_10_26_46_AM.png?v=1780519191&width=1500
+- https://kalasutraa.com/cdn/shop/files/1776663425158.png?v=1777287305&width=1500
+- https://kalasutraa.com/cdn/shop/files/1776663712669.png?v=1776664171&width=1500
+- https://kalasutraa.com/cdn/shop/files/ChatGPT_Image_Apr_28_2026_10_24_15_AM.png?v=1777352097&width=1500
+
+**"Timeless Art Forms" category cards**
+- Warli Painting → https://kalasutraa.com/cdn/shop/files/WhatsApp_Image_2026-06-04_at_11.35.55.jpg?v=1780553289&width=2048
+- Brass & Bell Metal → https://kalasutraa.com/cdn/shop/files/PixelBin-AI-Editor-1769773464061.png?v=1771315109&width=2048
+- Paper Mâché Masks → https://kalasutraa.com/cdn/shop/files/1781453113678.png?v=1781603731&width=2048
+- Tussar Silk Painting → https://kalasutraa.com/cdn/shop/files/IMG_9434.jpg?v=1775217993&width=2048
+- Palm Leaf Painting → https://kalasutraa.com/cdn/shop/files/1781598339372.png?v=1781603734&width=2048
+- Pattachitra Painting → https://kalasutraa.com/cdn/shop/files/1781545424652.png?v=1781603733&width=2048
+- Vrindavan Stone Carvings → https://kalasutraa.com/cdn/shop/files/1781532825150.png?v=1781603732&width=2048
+- Sandstone Structures → https://kalasutraa.com/cdn/shop/files/1781542826876.png?v=1781603731&width=2048
+
+**Testimonial avatars**
+- Priya S. (Mumbai) → https://kalasutraa.com/cdn/shop/files/1000161678.png?v=1776665036&width=100
+- Kamiya (New York) → https://kalasutraa.com/cdn/shop/files/1000161690_1.png?v=1776665032&width=100
+- Rajendra (Madhya Pradesh) → https://kalasutraa.com/cdn/shop/files/Gemini_Generated_Image_6s7om6s7om6s7om6_e58881a2-64b2-4177-a6a2-e200dc688bdc.png?v=1775660116&width=100
+
+**"Crafted by Hand" brass process section**
+- https://kalasutraa.com/cdn/shop/files/WA_1777359878221.png?v=1777360006&width=750
+
+**"Hands Behind the Art" artisan carousel**
+- Raghunath Moharana (Pattachitra, Odisha) → https://kalasutraa.com/cdn/shop/files/b2nqSFAKV5HNdGpBZRAaaZdhvL0eAeCaIyyZOt6MTRV6TzDYabXQmuYCwTxc4m1cergTVFfWBvXlHaZs4ELLaRVq-UHkVcadiWUM0HYfXoLj-v-ZLCQRLjUaEleTRp4zXI1WDq7WHr3smwSbelB6E9tlzcL5HtTlSpRput04Sy95IVhxq7u6d-5.jpg?v=1780553551&width=800
+- Shri Lakshman Soren (Sand stone carvings) → https://kalasutraa.com/cdn/shop/files/IMG_20251107_102045309.jpg?v=1780553639&width=800
+- Ananta Maharana (Pattachitra) → https://kalasutraa.com/cdn/shop/files/hFD8G3RcoBc5R409Qn1T_Is_7C6OQ8l6jtzWiCh7i5MGGv7FNf4qn0PQBsjxSU4r4NnhCgj81sfzxGYTRMF-9Q0dQTwRx5mMDm8h4jQvs_hpL8Jirqng2C41Y_kvvcPGYVyzBUC_lNFoLs6gIaJaa0fBdqvs-mlH3dQOzg1ZQgbE1xzhhe6R5z.jpg?v=1780553675&width=800
+- Shri Govind Das (Brass & Bell Metal, Vrindavan) → https://kalasutraa.com/cdn/shop/files/IMG_0042.heic?v=1780553741&width=800 ⚠️ HEIC — convert before use
+
+---
+
+## OUR STORY PAGE
+
+- Hero background → https://kalasutraa.com/cdn/shop/files/1000161785.png?v=1776676804&width=2400
+- "The Origin" → https://kalasutraa.com/cdn/shop/files/IMG_9496.heic?v=1775214914&width=800 ⚠️ HEIC
+- Founder image → https://kalasutraa.com/cdn/shop/files/file_000000005c587209ab1172da9f3f8ae2.png?v=1782467048&width=1200
+- Process Step 1 "Concept" → https://kalasutraa.com/cdn/shop/files/PixelBin-AI-Editor-1769804342079.png?v=1771315085&width=600
+- Process Step 2 "Craft" → https://kalasutraa.com/cdn/shop/files/2_befeefca-d13d-4001-9659-8a5b0c1ac527.png?v=1775659539&width=600
+- Process Step 3 "Creation" → https://kalasutraa.com/cdn/shop/files/IMG_20251107_114433689.jpg?v=1775217360&width=600
+- "The Artisan Voice" section → https://kalasutraa.com/cdn/shop/files/30.jpg?v=1771315065&width=1200
+- Odisha handicrafts "Details" block → https://kalasutraa.com/cdn/shop/files/Gemini_Generated_Image_g8p4d4g8p4d4g8p4.png?v=1777358177&width=800
+- Origin gallery image 1 → https://kalasutraa.com/cdn/shop/files/1768563995923_1_83274069-c2aa-4ab0-952d-b3f0c05f145e.jpg?v=1771315123&width=800
+- Origin gallery image 2 → https://kalasutraa.com/cdn/shop/files/1768564032429_1.jpg?v=1771315121&width=800
+- "Materials & Process" → https://kalasutraa.com/cdn/shop/files/Gemini_Generated_Image_7gll2w7gll2w7gll.png?v=1775659746&width=1000
+- Closing "Preserving the Soul of Art" banner → https://kalasutraa.com/cdn/shop/files/Gemini_Generated_Image_g8p4d4g8p4d4g8p4.png?v=1777358177&width=2000 (same file reused a 3rd time on this page)
+
+---
+
+## MEET THE ARTISANS PAGE
+
+- Hero background → https://kalasutraa.com/cdn/shop/files/Gemini_Generated_Image_g8p4d4g8p4d4g8p4.png?v=1777358177&width=2400 (again, same recurring file)
+- Shree Banamali Mohapatra → https://kalasutraa.com/cdn/shop/files/hFD8G3RcoBc5R409Qn1T_Is_7C6OQ8l6jtzWiCh7i5MGGv7FNf4qn0PQBsjxSU4r4NnhCgj81sfzxGYTRMF-9Q0dQTwRx5mMDm8h4jQvs_hpL8Jirqng2C41Y_kvvcPGYVyzBUC_lNFoLs6gIaJaa0fBdqvs-mlH3dQOzg1ZQgbE1xzhhe6R5z.jpg?v=1780553675&width=1000 ⚠️ identical file used for "Ananta Maharana" on the homepage — different name, same photo
+- Shree Dr. Jagannath Mahapatra → https://kalasutraa.com/cdn/shop/files/maxresdefault.jpg?v=1776677280&width=1000 ⚠️ this filename/pattern suggests a YouTube video thumbnail, not a dedicated portrait
+- Shree Raghunath Sahoo → https://kalasutraa.com/cdn/shop/files/2_artisan.png?v=1775660165&width=1000
+
+---
+
+## BOOK A CONSULTATION PAGE
+
+- Hero background → https://kalasutraa.com/cdn/shop/files/PixelBin-AI-Editor-1769773708969_1d04b206-0272-4ca4-aaa5-9e066b3bc11e.png?v=1777356681&width=2400
+
+---
+
+## CONTACT PAGE
+
+- Hero background → https://kalasutraa.com/cdn/shop/files/ChatGPT_Image_Apr_28_2026_12_28_29_PM.png?v=1777359628&width=2400
+- "Write to Us" side image → https://kalasutraa.com/cdn/shop/files/ChatGPT_Image_Apr_28_2026_12_21_01_PM.png?v=1777359093&width=1200
+
+---
+
+## SAMPLE PRODUCT — Ananda Tandava Nataraja (Brass & Bell Metal)
+Product URL: https://kalasutraa.com/products/handcrafted-bronze-nataraja-statue-lord-shiva-dancing
+
+- Main/gallery image 1 → https://kalasutraa.com/cdn/shop/files/PixelBin-AI-Editor-1769773708969.png?v=1771315110&width=900
+- Gallery image 2 → https://kalasutraa.com/cdn/shop/files/PixelBin-AI-Editor-1769773464061.png?v=1771315109&width=900
+- Gallery image 3 → https://kalasutraa.com/cdn/shop/files/1000111907.png?v=1771315110&width=900
+- Gallery image 4 → https://kalasutraa.com/cdn/shop/files/PixelBin-AI-Editor-1769773390327.png?v=1771315110&width=900
+
+---
+
+## STILL TO FETCH
+
+The shop grid pages (collections/all, pages 1–6) list ~60 products but don't expose thumbnail
+image URLs through this extraction method — only individual product pages do. If you want the
+full product catalog's images, either:
+1. Tell me "fetch all product images" and I'll go through each product page one by one, or
+2. Give me a shortlist of the specific products you need images for right now, or
+3. On the live site, right-click any product image → "Copy image address" — that gives you the
+   direct CDN URL instantly for any product without waiting on me.

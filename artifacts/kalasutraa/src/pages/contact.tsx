@@ -27,7 +27,7 @@ export default function Contact() {
     <Layout>
       {/* Hero */}
       <section className="bg-espresso text-white py-32 border-b-4 border-accent relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://picsum.photos/seed/texture-dark/1920/1080')] bg-cover bg-center mix-blend-overlay"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('https://kalasutraa.com/cdn/shop/files/ChatGPT_Image_Apr_28_2026_12_28_29_PM.png?v=1777359628&width=2400')] bg-cover bg-center mix-blend-overlay"></div>
         <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
           <span className="block text-xs font-semibold tracking-widest uppercase text-accent mb-6">Atelier & Support</span>
           <h1 className="font-serif text-5xl md:text-7xl mb-6">Get in Touch</h1>

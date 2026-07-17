@@ -44,7 +44,7 @@ export default function Consultation() {
     <Layout>
       {/* Hero */}
       <section className="bg-espresso text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://picsum.photos/seed/advisory/1920/1080')] bg-cover bg-center mix-blend-overlay"></div>
+        <div className="absolute inset-0 opacity-20 bg-[url('https://kalasutraa.com/cdn/shop/files/PixelBin-AI-Editor-1769773708969_1d04b206-0272-4ca4-aaa5-9e066b3bc11e.png?v=1777356681&width=2400')] bg-cover bg-center mix-blend-overlay"></div>
         <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
           <span className="block text-xs font-semibold tracking-widest uppercase text-accent mb-6">Art Advisory</span>
           <h1 className="font-serif text-5xl md:text-7xl mb-6">Curate Your Legacy</h1>

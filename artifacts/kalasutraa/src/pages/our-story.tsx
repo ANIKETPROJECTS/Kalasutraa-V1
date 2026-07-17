@@ -11,7 +11,7 @@ export default function OurStory() {
     <Layout>
       {/* Hero */}
       <section className="bg-espresso text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://picsum.photos/seed/heritage/1920/1080')] bg-cover bg-center mix-blend-overlay"></div>
+        <div className="absolute inset-0 opacity-20 bg-[url('https://kalasutraa.com/cdn/shop/files/1000161785.png?v=1776676804&width=2400')] bg-cover bg-center mix-blend-overlay"></div>
         <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
           <span className="block text-xs font-semibold tracking-widest uppercase text-accent mb-6">EST. 2026</span>
           <h1 className="font-serif text-5xl md:text-7xl mb-6">Preserving the Soul of India</h1>
@@ -53,9 +53,9 @@ export default function OurStory() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal>
               <div className="relative aspect-[4/5] rounded overflow-hidden">
-                <img 
-                  src="https://picsum.photos/seed/founder-story/800/1000" 
-                  alt="Artisan working" 
+                <img
+                  src="https://kalasutraa.com/cdn/shop/files/file_000000005c587209ab1172da9f3f8ae2.png?v=1782467048&width=1200"
+                  alt="Artisan working"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -138,8 +138,8 @@ export default function OurStory() {
             </ScrollReveal>
             <ScrollReveal delay={0.2} className="order-1 lg:order-2">
               <div className="grid grid-cols-2 gap-4">
-                <img src="https://picsum.photos/seed/odisha1/400/500" alt="Pattachitra details" className="rounded w-full h-full object-cover" />
-                <img src="https://picsum.photos/seed/odisha2/400/500" alt="Artisan hands" className="rounded w-full h-full object-cover mt-8" />
+                <img src="https://kalasutraa.com/cdn/shop/files/1768563995923_1_83274069-c2aa-4ab0-952d-b3f0c05f145e.jpg?v=1771315123&width=800" alt="Pattachitra details" className="rounded w-full h-full object-cover" />
+                <img src="https://kalasutraa.com/cdn/shop/files/1768564032429_1.jpg?v=1771315121&width=800" alt="Artisan hands" className="rounded w-full h-full object-cover mt-8" />
               </div>
             </ScrollReveal>
           </div>

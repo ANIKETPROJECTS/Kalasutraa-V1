@@ -14,13 +14,13 @@ export function ProductCard({ slug, title, priceDisplay, images, badge, soldOut 
   return (
     <Link href={`/shop/product/${slug}`} className="group block">
       <div className="relative overflow-hidden rounded bg-secondary aspect-[3/4] mb-4">
-        <img 
-          src={`https://picsum.photos/seed/${images[0]}/600/800`} 
+        <img
+          src={images[0]}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />
-        
+
         {badge && (
           <div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-[10px] tracking-widest uppercase font-semibold px-3 py-1.5 rounded-sm">
             {badge}

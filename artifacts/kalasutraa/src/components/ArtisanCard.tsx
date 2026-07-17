@@ -12,8 +12,8 @@ export function ArtisanCard({ name, title, award, region, bio, pullQuote, photo 
   return (
     <div className="bg-card border border-border rounded overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-500 group">
       <div className="relative aspect-[4/3] overflow-hidden">
-        <img 
-          src={`https://picsum.photos/seed/${photo}/600/450`} 
+        <img
+          src={photo}
           alt={name}
           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
           loading="lazy"
