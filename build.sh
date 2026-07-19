@@ -5,7 +5,9 @@ set -euo pipefail
 
 echo ""
 echo "==> [1/2] Building frontend (Vite)..."
-pnpm --filter @workspace/kalasutraa run build
+cd artifacts/kalasutraa
+PORT=3003 BASE_PATH=/ NODE_ENV=production ./node_modules/.bin/vite build
+cd ../..
 
 echo ""
 echo "==> [2/2] Building API server (esbuild)..."
