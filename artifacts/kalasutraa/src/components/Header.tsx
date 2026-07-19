@@ -66,9 +66,10 @@ export function Header() {
                 Collections <ChevronDown size={12} className={`transition-transform duration-300 ${isCollectionsOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[580px] bg-background border border-border shadow-xl rounded p-6 transition-all duration-300 origin-top ${
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 w-[580px] pt-3 transition-all duration-300 origin-top ${
                 isCollectionsOpen ? 'opacity-100 scale-y-100 pointer-events-auto' : 'opacity-0 scale-y-0 pointer-events-none'
               }`}>
+              <div className="bg-background border border-border shadow-xl rounded p-6">
                 <div className="grid grid-cols-2 gap-3">
                   {collections.map(c => (
                     <Link
@@ -84,6 +85,7 @@ export function Header() {
                 <Link href="/shop" className="mt-4 text-center block p-2.5 bg-secondary text-foreground hover:bg-accent hover:text-white rounded transition-colors text-[11px] tracking-[0.15em] uppercase font-semibold">
                   View All Collections
                 </Link>
+              </div>
               </div>
             </div>
 
