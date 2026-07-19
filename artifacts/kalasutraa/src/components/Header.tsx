@@ -50,13 +50,13 @@ export function Header() {
               <img
                 src="/images/logo.png"
                 alt="Kalasutraa"
-                className="h-11 md:h-13 w-auto object-contain"
+                className="h-14 md:h-16 w-auto object-contain"
               />
             </Link>
           </div>
 
           {/* Desktop Nav — grows to fill space, centered */}
-          <nav className="hidden md:flex flex-1 items-center justify-center gap-7 lg:gap-9 text-[11px] tracking-[0.18em] uppercase font-semibold">
+          <nav className="hidden md:flex flex-1 items-center justify-center gap-7 lg:gap-9 text-[13px] tracking-[0.15em] uppercase font-semibold">
             <Link href="/" className="hover:text-primary transition-colors whitespace-nowrap">Home</Link>
 
             <div
