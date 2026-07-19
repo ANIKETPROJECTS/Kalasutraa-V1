@@ -29,10 +29,11 @@ module.exports = {
         NODE_ENV: "production",
         PORT: "3003",
 
-        // ── Required — replace with your actual values ──────────────────────
-        DATABASE_URL: "postgresql://USER:PASSWORD@localhost:5432/kalasutraa",
+        // ── Required — replace with your actual value ───────────────────────
         SESSION_SECRET: "replace-with-a-long-random-secret",
         // ────────────────────────────────────────────────────────────────────
+        // DATABASE_URL: "postgresql://USER:PASSWORD@localhost:5432/kalasutraa",
+        // Uncomment and set the above when you add a database.
       },
 
       // Log files (auto-created; rotate with: pm2 install pm2-logrotate)
