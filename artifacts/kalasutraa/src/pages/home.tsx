@@ -91,24 +91,24 @@ export default function Home() {
           ))}
         </div>
         
-        <div className="container relative z-10 text-center px-6 mt-16">
-          <ScrollReveal>
+        <div className="container relative z-10 px-6 mt-16 flex flex-col items-center text-center">
+          <ScrollReveal className="w-full flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 mb-8 border border-white/20 rounded-full px-4 py-1.5 bg-white/5 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-accent"></span>
               <span className="text-[10px] tracking-[0.2em] uppercase font-semibold">100% Made in India</span>
             </div>
-            
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-6 drop-shadow-lg max-w-5xl mx-auto">
+
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-6 drop-shadow-lg max-w-5xl text-center">
               Where Heritage Breathes
             </h1>
-            
-            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed min-h-[3.5rem] flex items-center justify-center">
+
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mb-10 font-light leading-relaxed min-h-[3.5rem] flex items-center justify-center text-center">
               <span>
                 {displayed}
                 <span className="inline-block w-[2px] h-[1.1em] bg-accent ml-[2px] align-middle animate-[blink_1s_step-end_infinite]" />
               </span>
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button href="/shop" variant="primary">Explore Collections</Button>
               <Button href="/consultation" variant="ghost" className="text-white hover:text-accent border border-transparent hover:border-accent">

@@ -44,9 +44,14 @@ export function Header() {
         </button>
 
         {/* Logo */}
-        <div className="flex-1 md:flex-none text-center md:text-left">
-          <Link href="/" className="font-serif text-2xl tracking-widest text-foreground font-semibold uppercase">
-            Kalasutraa
+        <div className="flex-1 md:flex-none flex justify-center md:justify-start">
+          <Link href="/" className="block">
+            <img
+              src="/images/logo.png"
+              alt="Kalasutraa"
+              className="h-9 w-auto object-contain"
+              style={{ filter: isScrolled ? 'brightness(0.85)' : 'brightness(1)' }}
+            />
           </Link>
         </div>
 
@@ -118,7 +123,7 @@ export function Header() {
           onClick={e => e.stopPropagation()}
         >
           <div className="flex justify-between items-center mb-10">
-            <span className="font-serif text-xl tracking-widest uppercase">Kalasutraa</span>
+            <img src="/images/logo.png" alt="Kalasutraa" className="h-8 w-auto object-contain" />
             <button onClick={() => setIsMobileMenuOpen(false)}><X size={24} /></button>
           </div>
           
