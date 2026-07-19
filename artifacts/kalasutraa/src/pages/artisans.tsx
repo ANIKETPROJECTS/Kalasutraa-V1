@@ -11,7 +11,7 @@ export default function Artisans() {
   return (
     <Layout>
       {/* Hero — looping video, no tint */}
-      <section className="relative overflow-hidden flex items-center justify-center text-white border-b-4 border-accent" style={{minHeight: '55vh'}}>
+      <section className="relative overflow-hidden flex items-center justify-center text-white border-b-4 border-accent" style={{minHeight: '85vh'}}>
         <video
           autoPlay
           loop

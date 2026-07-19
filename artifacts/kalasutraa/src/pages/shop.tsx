@@ -36,7 +36,7 @@ export default function Shop() {
   return (
     <Layout>
       {/* Hero — looping video, no tint */}
-      <div className="relative overflow-hidden flex items-center justify-center text-white" style={{minHeight: '52vh'}}>
+      <div className="relative overflow-hidden flex items-center justify-center text-white" style={{minHeight: '85vh'}}>
         <video
           autoPlay
           loop

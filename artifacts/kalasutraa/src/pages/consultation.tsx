@@ -43,7 +43,7 @@ export default function Consultation() {
   return (
     <Layout>
       {/* Hero — looping video, no tint */}
-      <section className="relative overflow-hidden flex items-center justify-center text-white" style={{minHeight: '55vh'}}>
+      <section className="relative overflow-hidden flex items-center justify-center text-white" style={{minHeight: '85vh'}}>
         <video
           autoPlay
           loop
