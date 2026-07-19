@@ -76,7 +76,6 @@ export default function Home() {
               loading={i === 0 ? 'eager' : 'lazy'}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-b from-espresso/30 via-espresso/55 to-espresso"></div>
         </div>
 
         {/* Dot indicators */}
