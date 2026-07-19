@@ -3,22 +3,175 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Kalasutraa</title>
-    <meta name="description" content="Kalasutraa — built on Replit. Update this description to reflect the app." />
+    <title>Kalasutraa — Heritage Indian Art</title>
+    <meta name="description" content="Kalasutraa — Museum-quality handcrafted Indian art by master artisans." />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="Kalasutraa" />
-    <meta property="og:description" content="Kalasutraa — built on Replit. Update this description to reflect the app." />
+    <meta property="og:description" content="Museum-quality handcrafted Indian art by master artisans." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Kalasutraa" />
-    <meta name="twitter:description" content="Kalasutraa — built on Replit. Update this description to reflect the app." />
+    <meta name="twitter:description" content="Museum-quality handcrafted Indian art by master artisans." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: #2C1810; }
+
+      #loading-screen {
+        position: fixed;
+        inset: 0;
+        background: #1a0e08;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+      }
+      #loading-screen.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Decorative mandala ring */
+      .loader-mandala {
+        position: relative;
+        width: 96px;
+        height: 96px;
+        margin-bottom: 32px;
+      }
+      .loader-mandala svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .ring-outer {
+        animation: spinCW 3s linear infinite;
+        transform-origin: 48px 48px;
+      }
+      .ring-inner {
+        animation: spinCCW 2s linear infinite;
+        transform-origin: 48px 48px;
+      }
+      .ring-dot {
+        animation: pulseDot 1.6s ease-in-out infinite;
+      }
+      @keyframes spinCW   { to { transform: rotate(360deg);  } }
+      @keyframes spinCCW  { to { transform: rotate(-360deg); } }
+      @keyframes pulseDot { 0%,100% { opacity:.25; transform:scale(.85); } 50% { opacity:1; transform:scale(1.15); } }
+
+      /* Wordmark */
+      .loader-wordmark {
+        font-family: 'IM Fell English', Georgia, serif;
+        color: #F5F0E8;
+        letter-spacing: 0.3em;
+        font-size: 1.35rem;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .loader-tagline {
+        font-family: Georgia, serif;
+        color: #B8762A;
+        font-size: 0.62rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        margin-bottom: 36px;
+        font-style: italic;
+      }
+
+      /* Progress bar */
+      .loader-bar-wrap {
+        width: 120px;
+        height: 1px;
+        background: rgba(184,118,42,0.18);
+        margin-top: 8px;
+        position: relative;
+        overflow: hidden;
+      }
+      .loader-bar {
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, #B8762A, transparent);
+        width: 60%;
+        animation: barSweep 1.6s ease-in-out infinite;
+      }
+      @keyframes barSweep {
+        from { transform: translateX(-100%); }
+        to   { transform: translateX(300%);  }
+      }
+
+      /* Ambient glow */
+      .loader-glow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(184,118,42,0.08) 0%, transparent 70%);
+        pointer-events: none;
+      }
+    </style>
   </head>
   <body>
+    <!-- Loading screen -->
+    <div id="loading-screen">
+      <div class="loader-glow"></div>
+
+      <!-- Mandala spinner -->
+      <div class="loader-mandala">
+        <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- outer dashed ring -->
+          <g class="ring-outer">
+            <circle cx="48" cy="48" r="44" stroke="#B8762A" stroke-width="1" stroke-dasharray="6 4" opacity="0.6"/>
+            <circle cx="48" cy="4"  r="2.5" fill="#B8762A" opacity="0.8"/>
+            <circle cx="92" cy="48" r="2.5" fill="#B8762A" opacity="0.8"/>
+            <circle cx="48" cy="92" r="2.5" fill="#B8762A" opacity="0.8"/>
+            <circle cx="4"  cy="48" r="2.5" fill="#B8762A" opacity="0.8"/>
+          </g>
+          <!-- middle solid ring -->
+          <g class="ring-inner">
+            <circle cx="48" cy="48" r="30" stroke="rgba(184,118,42,0.35)" stroke-width="1.5"/>
+            <circle cx="48" cy="18" r="2" fill="#B8762A" opacity="0.5"/>
+            <circle cx="78" cy="48" r="2" fill="#B8762A" opacity="0.5"/>
+            <circle cx="48" cy="78" r="2" fill="#B8762A" opacity="0.5"/>
+            <circle cx="18" cy="48" r="2" fill="#B8762A" opacity="0.5"/>
+          </g>
+          <!-- centre dot -->
+          <circle class="ring-dot" cx="48" cy="48" r="5" fill="#B8762A"/>
+          <circle cx="48" cy="48" r="12" stroke="rgba(184,118,42,0.2)" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="loader-wordmark">Kalasutraa</div>
+      <div class="loader-tagline">Where Heritage Breathes</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Hide loader once React has painted
+      var _loaderHidden = false;
+      function _hideLoader() {
+        if (_loaderHidden) return;
+        _loaderHidden = true;
+        var el = document.getElementById('loading-screen');
+        if (!el) return;
+        // Short delay so the first frame of the app is visible before we fade
+        setTimeout(function () {
+          el.classList.add('fade-out');
+          setTimeout(function () { el.style.display = 'none'; }, 950);
+        }, 250);
+      }
+      // Fallback: remove after 4 s regardless
+      setTimeout(_hideLoader, 4000);
+      window.addEventListener('load', function () { setTimeout(_hideLoader, 150); });
+      // React will call this after first render via main.tsx (if exported)
+      window.__kalasutraa_ready = _hideLoader;
+    </script>
   </body>
 </html>

@@ -14,20 +14,52 @@ import { ShieldCheck, Paintbrush, HeadphonesIcon } from 'lucide-react';
 import { Link } from 'wouter';
 
 const heroImages = [
-  'https://kalasutraa.com/cdn/shop/files/ChatGPT_Image_Apr_28_2026_10_26_46_AM.png?v=1780519191&width=1500',
-  'https://kalasutraa.com/cdn/shop/files/1776663425158.png?v=1777287305&width=1500',
-  'https://kalasutraa.com/cdn/shop/files/1776663712669.png?v=1776664171&width=1500',
-  'https://kalasutraa.com/cdn/shop/files/ChatGPT_Image_Apr_28_2026_10_24_15_AM.png?v=1777352097&width=1500',
+  '/images/hero-1.jpg',
+  '/images/hero-2.jpg',
+  '/images/hero-3.jpg',
+  '/images/hero-4.jpg',
+];
+
+const typePhrases = [
+  'Discover museum-quality Indian art, crafted by master artisans carrying centuries of skill.',
+  'Each piece tells a story woven in tradition, devotion, and unmatched craftsmanship.',
+  'Where ancient heritage meets the modern collector\'s discerning eye.',
+  'Bridging sacred art villages of India with homes around the world.',
 ];
 
 export default function Home() {
   useSEO({ title: 'Luxury Indian Traditional Art', description: 'Kalasutraa is where heritage breathes and art finds its home.' });
   const [heroIdx, setHeroIdx] = useState(0);
+  const [phraseIdx, setPhraseIdx] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
 
+  // Hero carousel — change every 6 s
   useEffect(() => {
-    const t = setInterval(() => setHeroIdx(i => (i + 1) % heroImages.length), 5000);
+    const t = setInterval(() => setHeroIdx(i => (i + 1) % heroImages.length), 6000);
     return () => clearInterval(t);
   }, []);
+
+  // Typewriter
+  useEffect(() => {
+    const current = typePhrases[phraseIdx];
+    if (!isDeleting && displayed.length < current.length) {
+      const t = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 42);
+      return () => clearTimeout(t);
+    }
+    if (!isDeleting && displayed.length === current.length) {
+      const t = setTimeout(() => setIsDeleting(true), 2800);
+      return () => clearTimeout(t);
+    }
+    if (isDeleting && displayed.length > 0) {
+      const t = setTimeout(() => setDisplayed(d => d.slice(0, -1)), 18);
+      return () => clearTimeout(t);
+    }
+    if (isDeleting && displayed.length === 0) {
+      setIsDeleting(false);
+      setPhraseIdx(i => (i + 1) % typePhrases.length);
+    }
+  }, [displayed, isDeleting, phraseIdx]);
 
   return (
     <Layout>
@@ -36,14 +68,27 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           {heroImages.map((src, i) => (
             <img
-              key={src}
+              key={i}
               src={src}
               alt="Traditional Artisan at work"
-              className={`absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity transition-opacity duration-[2000ms] ${i === heroIdx ? 'opacity-40' : 'opacity-0'}`}
+              className={`absolute inset-0 w-full h-full object-cover mix-blend-luminosity transition-opacity duration-[2500ms] hero-pan ${i === heroIdx ? 'opacity-45' : 'opacity-0'}`}
+              style={{ animationDelay: `${-i * 2}s` }}
               loading={i === 0 ? 'eager' : 'lazy'}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-espresso/30 via-espresso/55 to-espresso"></div>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
+          {heroImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setHeroIdx(i)}
+              className={`rounded-full transition-all duration-500 ${i === heroIdx ? 'w-6 h-1.5 bg-accent' : 'w-1.5 h-1.5 bg-white/30 hover:bg-white/60'}`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
         </div>
         
         <div className="container relative z-10 text-center px-6 mt-16">
@@ -57,8 +102,11 @@ export default function Home() {
               Where Heritage Breathes
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-              Discover museum-quality Indian art, crafted by master artisans carrying centuries of skill.
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed min-h-[3.5rem] flex items-center justify-center">
+              <span>
+                {displayed}
+                <span className="inline-block w-[2px] h-[1.1em] bg-accent ml-[2px] align-middle animate-[blink_1s_step-end_infinite]" />
+              </span>
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
