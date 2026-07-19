@@ -10,12 +10,20 @@ export default function Artisans() {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="bg-espresso text-white py-32 border-b-4 border-accent">
-        <div className="container mx-auto px-6 md:px-12 text-center">
-          <span className="block text-xs font-semibold tracking-widest uppercase text-accent mb-6">The Masters</span>
-          <h1 className="font-serif text-5xl md:text-7xl mb-6">Hands that Craft</h1>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+      {/* Hero — looping video, no tint */}
+      <section className="relative overflow-hidden flex items-center justify-center text-white border-b-4 border-accent" style={{minHeight: '55vh'}}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/hero-artisans.mp4"
+        />
+        <div className="relative z-10 text-center px-6 py-32 container mx-auto">
+          <span className="block text-xs font-semibold tracking-widest uppercase text-accent mb-6 drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">The Masters</span>
+          <h1 className="font-serif text-5xl md:text-7xl mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">Hands that Craft</h1>
+          <p className="text-gray-100 max-w-2xl mx-auto text-lg leading-relaxed drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
             Every piece in our gallery is the result of years of disciplined training, deep devotion, and unparalleled skill. Meet the national awardees and heritage keepers who create Kalasutraa's masterpieces.
           </p>
         </div>
