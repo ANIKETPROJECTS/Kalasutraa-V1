@@ -38,7 +38,7 @@ const staticDir = path.join(process.cwd(), "artifacts", "kalasutraa", "dist", "p
 app.use(express.static(staticDir));
 
 // SPA fallback — any unmatched route returns index.html
-app.get("*", (_req, res) => {
+app.get("/*path", (_req, res) => {
   res.sendFile(path.join(staticDir, "index.html"));
 });
 

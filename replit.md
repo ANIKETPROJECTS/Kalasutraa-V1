@@ -1,15 +1,16 @@
-# [Project name]
+# Kalasutraa
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+An Indian heritage arts e-commerce platform showcasing museum-quality handcrafted pieces, with artisan profiles, collections browsing, and a consultation booking flow.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- **Frontend** (`artifacts/kalasutraa`): `pnpm --filter @workspace/kalasutraa run dev` — React + Vite app, served at `/`
+- **API server** (`artifacts/api-server`): `pnpm --filter @workspace/api-server run dev` — Express 5 API, served at `/api`
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm --filter @workspace/db run push` — push DB schema changes to Replit's built-in PostgreSQL (dev only)
+- `DATABASE_URL` is runtime-managed by Replit — no manual setup required
 
 ## Stack
 
