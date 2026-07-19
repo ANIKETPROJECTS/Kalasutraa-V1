@@ -29,87 +29,46 @@ export function Header() {
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-background/97 backdrop-blur-md shadow-sm'
-            : 'bg-background/90 backdrop-blur-sm'
+            ? 'bg-background/95 backdrop-blur-md shadow-sm py-3'
+            : 'bg-transparent py-5'
         }`}
       >
-        {/* ── Row 1: Search | Logo (center) | Icons ── */}
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="flex items-center justify-between py-3 md:py-4">
+        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between gap-6">
 
-            {/* Left — Search (desktop) / Hamburger (mobile) */}
-            <div className="flex items-center gap-3 w-28 md:w-40">
-              {/* Mobile hamburger */}
-              <button
-                className="md:hidden text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(true)}
-                aria-label="Open menu"
-              >
-                <Menu size={22} />
-              </button>
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden text-foreground hover:text-primary transition-colors shrink-0"
+            onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu size={22} />
+          </button>
 
-              {/* Desktop search icon */}
-              <Link
-                href="/contact"
-                className="hidden md:flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-[11px] tracking-widest uppercase font-medium"
-              >
-                <Search size={16} />
-                <span className="hidden lg:inline">Search</span>
-              </Link>
-            </div>
-
-            {/* Center — Logo (always centered) */}
-            <div className="flex-1 flex justify-center">
-              <Link href="/">
-                <img
-                  src="/images/logo.png"
-                  alt="Kalasutraa"
-                  className="h-12 md:h-14 w-auto object-contain"
-                />
-              </Link>
-            </div>
-
-            {/* Right — Wishlist + Cart */}
-            <div className="flex items-center gap-4 md:gap-5 w-28 md:w-40 justify-end text-foreground">
-              <Link href="/wishlist" className="hover:text-primary transition-colors relative">
-                <Heart size={20} />
-                {wishlistCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full leading-none">
-                    {wishlistCount}
-                  </span>
-                )}
-              </Link>
-              <Link href="/cart" className="hover:text-primary transition-colors relative">
-                <ShoppingBag size={20} />
-                {cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full leading-none">
-                    {cartCount}
-                  </span>
-                )}
-              </Link>
-            </div>
+          {/* Logo */}
+          <div className="flex-none">
+            <Link href="/">
+              <img
+                src="/images/logo.png"
+                alt="Kalasutraa"
+                className="h-11 md:h-13 w-auto object-contain"
+              />
+            </Link>
           </div>
-        </div>
 
-        {/* Thin rule between rows */}
-        <div className="border-t border-border/60" />
+          {/* Desktop Nav — grows to fill space, centered */}
+          <nav className="hidden md:flex flex-1 items-center justify-center gap-7 lg:gap-9 text-[11px] tracking-[0.18em] uppercase font-semibold">
+            <Link href="/" className="hover:text-primary transition-colors whitespace-nowrap">Home</Link>
 
-        {/* ── Row 2: Desktop Nav (centered) ── */}
-        <div className="hidden md:block">
-          <nav className="container mx-auto px-6 md:px-12 flex items-center justify-center gap-8 lg:gap-10 py-2.5 text-[11px] tracking-[0.18em] uppercase font-semibold text-foreground">
-            <Link href="/" className="hover:text-primary transition-colors py-1">Home</Link>
-
-            {/* Collections dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setIsCollectionsOpen(true)}
               onMouseLeave={() => setIsCollectionsOpen(false)}
             >
-              <button className="flex items-center gap-1 hover:text-primary transition-colors py-1">
+              <button className="flex items-center gap-1 hover:text-primary transition-colors whitespace-nowrap">
                 Collections <ChevronDown size={12} className={`transition-transform duration-300 ${isCollectionsOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[580px] bg-background border border-border shadow-xl rounded p-6 transition-all duration-300 origin-top ${
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[580px] bg-background border border-border shadow-xl rounded p-6 transition-all duration-300 origin-top ${
                 isCollectionsOpen ? 'opacity-100 scale-y-100 pointer-events-auto' : 'opacity-0 scale-y-0 pointer-events-none'
               }`}>
                 <div className="grid grid-cols-2 gap-3">
@@ -124,20 +83,39 @@ export function Header() {
                     </Link>
                   ))}
                 </div>
-                <Link
-                  href="/shop"
-                  className="mt-4 text-center block p-2.5 bg-secondary text-foreground hover:bg-accent hover:text-white rounded transition-colors text-[11px] tracking-[0.15em] uppercase font-semibold"
-                >
+                <Link href="/shop" className="mt-4 text-center block p-2.5 bg-secondary text-foreground hover:bg-accent hover:text-white rounded transition-colors text-[11px] tracking-[0.15em] uppercase font-semibold">
                   View All Collections
                 </Link>
               </div>
             </div>
 
-            <Link href="/our-story" className="hover:text-primary transition-colors py-1">Our Story</Link>
-            <Link href="/artisans" className="hover:text-primary transition-colors py-1">Meet the Artisans</Link>
-            <Link href="/consultation" className="hover:text-primary transition-colors py-1">Book a Consultation</Link>
-            <Link href="/contact" className="hover:text-primary transition-colors py-1">Contact</Link>
+            <Link href="/our-story" className="hover:text-primary transition-colors whitespace-nowrap">Our Story</Link>
+            <Link href="/artisans" className="hover:text-primary transition-colors whitespace-nowrap">Meet Artisans</Link>
+            <Link href="/consultation" className="hover:text-primary transition-colors whitespace-nowrap">Consultation</Link>
           </nav>
+
+          {/* Icons */}
+          <div className="flex items-center gap-4 shrink-0">
+            <Link href="/contact" className="hover:text-primary transition-colors hidden sm:block">
+              <Search size={19} />
+            </Link>
+            <Link href="/wishlist" className="hover:text-primary transition-colors relative">
+              <Heart size={19} />
+              {wishlistCount > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full leading-none">
+                  {wishlistCount}
+                </span>
+              )}
+            </Link>
+            <Link href="/cart" className="hover:text-primary transition-colors relative">
+              <ShoppingBag size={19} />
+              {cartCount > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full leading-none">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
+          </div>
         </div>
       </header>
 
