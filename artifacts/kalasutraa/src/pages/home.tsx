@@ -130,24 +130,17 @@ export default function Home() {
           backgroundPosition: 'center',
         }}
       >
-        {/* Dark translucent wash so content stays legible */}
-        <div className="absolute inset-0 bg-[#1a0e06]/72 pointer-events-none" />
 
         <div className="relative z-10 container mx-auto px-6 md:px-12">
           <ScrollReveal className="text-center mb-20">
-            <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E] mb-4">Curated Portfolios</h2>
-            <h3 className="font-serif text-4xl md:text-5xl text-white">Timeless Art Forms</h3>
-            <div className="w-12 h-px bg-[#C9A96E] mx-auto mt-8"></div>
+            <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4">Curated Portfolios</h2>
+            <h3 className="font-serif text-4xl md:text-5xl text-foreground">Timeless Art Forms</h3>
+            <div className="w-12 h-px bg-foreground mx-auto mt-8"></div>
           </ScrollReveal>
         </div>
 
         {/* Marquee strip — full bleed */}
         <div className="relative z-10 w-full">
-          {/* fade edges matching the overlay tone */}
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-32 z-10"
-            style={{ background: 'linear-gradient(to right, rgba(26,14,6,0.72), transparent)' }} />
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-32 z-10"
-            style={{ background: 'linear-gradient(to left, rgba(26,14,6,0.72), transparent)' }} />
 
           <div className="flex animate-marquee" style={{ width: 'max-content' }}>
             {[...collections, ...collections].map((c, i) => (
@@ -192,8 +185,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                <h3 className="font-serif text-xl text-white group-hover:text-[#C9A96E] transition-colors leading-snug mb-2">{c.title}</h3>
-                <p className="text-xs text-white/60 line-clamp-2 leading-relaxed max-w-[240px]">{c.description}</p>
+                <h3 className="font-serif text-xl text-foreground group-hover:text-primary transition-colors leading-snug mb-2">{c.title}</h3>
+                <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed max-w-[240px]">{c.description}</p>
               </a>
             ))}
           </div>
@@ -278,8 +271,6 @@ export default function Home() {
           backgroundPosition: 'center',
         }}
       >
-        {/* Translucent wash — lighter than the arch section to let the pale stone show */}
-        <div className="absolute inset-0 bg-[#f5ede4]/82 pointer-events-none" />
 
         <div className="relative z-10 container mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
