@@ -479,12 +479,12 @@ export default function Home() {
                     </div>
                   </div>
                   <h4
-                    className="font-serif text-2xl mb-1"
-                    style={{ color: '#1c0e05', textShadow: '0 1px 6px rgba(255,245,220,0.95), 0 0 20px rgba(255,255,255,0.5)' }}
+                    className="font-serif text-3xl mb-2 text-white"
+                    style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}
                   >{artisan.name}</h4>
                   <p
                     className="text-sm uppercase tracking-widest font-semibold"
-                    style={{ color: '#7a3d10', textShadow: '0 1px 4px rgba(255,245,220,0.9)' }}
+                    style={{ color: '#f5c97a', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}
                   >{artisan.craft}</p>
                 </div>
               </ScrollReveal>
