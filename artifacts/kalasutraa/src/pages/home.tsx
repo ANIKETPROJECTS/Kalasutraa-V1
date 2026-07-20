@@ -141,20 +141,46 @@ export default function Home() {
               <a
                 key={`${c.slug}-${i}`}
                 href={`/shop/${c.slug}`}
-                className="group flex flex-col items-center text-center mx-8 w-56 shrink-0"
+                className="group flex flex-col items-center text-center mx-10 w-80 shrink-0"
               >
-                {/* Circular frame */}
-                <div className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-[#8A6D3B]/30 group-hover:ring-[#8A6D3B] transition-all duration-500 shadow-lg mb-5">
-                  <img
-                    src={c.heroImage}
-                    alt={c.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 rounded-full bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                {/* Decorative frame */}
+                <div className="relative mb-7" style={{ width: 280, height: 280 }}>
+                  {/* Outermost dashed orbit — rotates slowly on hover */}
+                  <div className="absolute rounded-full border border-dashed border-[#8A6D3B]/40 transition-all duration-700 group-hover:border-[#8A6D3B]/70"
+                    style={{ inset: -14 }} />
+                  {/* Second solid thin ring */}
+                  <div className="absolute rounded-full border border-[#8A6D3B]/50 transition-all duration-500 group-hover:border-[#8A6D3B]"
+                    style={{ inset: -6 }} />
+                  {/* Diamond gems at cardinal points (sit on the second ring) */}
+                  {[
+                    { top: -10,  left: '50%',  transform: 'translateX(-50%) rotate(45deg)' },
+                    { bottom: -10, left: '50%', transform: 'translateX(-50%) rotate(45deg)' },
+                    { left: -10, top: '50%',   transform: 'translateY(-50%) rotate(45deg)' },
+                    { right: -10, top: '50%',  transform: 'translateY(-50%) rotate(45deg)' },
+                  ].map((style, j) => (
+                    <div
+                      key={j}
+                      className="absolute w-[10px] h-[10px] bg-[#8A6D3B] opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ ...style, position: 'absolute' }}
+                    />
+                  ))}
+                  {/* Image circle */}
+                  <div className="absolute inset-0 rounded-full overflow-hidden shadow-2xl ring-[3px] ring-[#8A6D3B]/60 group-hover:ring-[#8A6D3B] transition-all duration-500">
+                    <img
+                      src={c.heroImage}
+                      alt={c.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                      loading="lazy"
+                    />
+                    {/* Warm vignette overlay */}
+                    <div className="absolute inset-0 rounded-full"
+                      style={{ background: 'radial-gradient(ellipse at center, transparent 55%, rgba(30,15,5,0.35) 100%)' }} />
+                    <div className="absolute inset-0 rounded-full bg-black/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
                 </div>
-                <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors leading-snug mb-1">{c.title}</h3>
-                <p className="text-[11px] text-muted-foreground line-clamp-2 leading-relaxed">{c.description}</p>
+
+                <h3 className="font-serif text-xl text-foreground group-hover:text-primary transition-colors leading-snug mb-2">{c.title}</h3>
+                <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed max-w-[240px]">{c.description}</p>
               </a>
             ))}
           </div>
