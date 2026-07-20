@@ -274,7 +274,7 @@ export default function Home() {
                   {/* ordinal number */}
                   <span
                     className="block font-serif text-5xl font-bold mb-5 leading-none select-none transition-colors duration-300"
-                    style={{ color: 'rgba(201,151,58,0.20)' }}
+                    style={{ color: '#C9973A' }}
                   >{card.num}</span>
 
                   <h3 className="font-serif text-xl md:text-2xl text-white mb-4 group-hover:text-[#E8C07A] transition-colors duration-300">
