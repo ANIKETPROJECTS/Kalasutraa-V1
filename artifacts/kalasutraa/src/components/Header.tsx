@@ -80,23 +80,40 @@ export function Header() {
                 Collections <ChevronDown size={12} className={`transition-transform duration-300 ${isCollectionsOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              <div className={`absolute top-full left-1/2 -translate-x-1/2 w-[580px] pt-3 transition-all duration-300 origin-top ${
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 w-[780px] pt-3 transition-all duration-300 origin-top ${
                 isCollectionsOpen ? 'opacity-100 scale-y-100 pointer-events-auto' : 'opacity-0 scale-y-0 pointer-events-none'
               }`}>
-              <div className="bg-background border border-border shadow-xl rounded p-6">
-                <div className="grid grid-cols-2 gap-3">
+              <div className="bg-background border border-border shadow-2xl rounded-sm p-5">
+                <div className="grid grid-cols-3 gap-3">
                   {collections.map(c => (
                     <Link
                       key={c.slug}
                       href={`/shop/${c.slug}`}
-                      className="block p-3 hover:bg-secondary rounded transition-colors text-left normal-case"
+                      className="group relative block overflow-hidden rounded-sm normal-case"
+                      style={{ height: 110 }}
                     >
-                      <span className="block font-serif text-base tracking-normal mb-0.5">{c.title}</span>
-                      <span className="block text-[11px] text-muted-foreground tracking-normal line-clamp-1">{c.description}</span>
+                      {/* background image */}
+                      <div
+                        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                        style={{ backgroundImage: `url(${c.heroImage})` }}
+                      />
+                      {/* gradient overlay — deepens on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10 transition-opacity duration-300 group-hover:from-black/85 group-hover:via-black/45" />
+                      {/* amber top accent line that sweeps in on hover */}
+                      <div className="absolute top-0 left-0 h-[2px] w-0 bg-[#C9973A] transition-all duration-400 group-hover:w-full" />
+                      {/* text */}
+                      <div className="absolute bottom-0 left-0 right-0 p-3">
+                        <span className="block font-serif text-[13px] text-white leading-tight tracking-wide group-hover:text-[#F0CF8A] transition-colors duration-300">
+                          {c.title}
+                        </span>
+                      </div>
                     </Link>
                   ))}
                 </div>
-                <Link href="/shop" className="mt-4 text-center block p-2.5 bg-secondary text-foreground hover:bg-accent hover:text-white rounded transition-colors text-[11px] tracking-[0.15em] uppercase font-semibold">
+                <Link
+                  href="/shop"
+                  className="mt-4 text-center block p-2.5 bg-secondary text-foreground hover:bg-[#8B5C2A] hover:text-white rounded-sm transition-colors duration-300 text-[11px] tracking-[0.18em] uppercase font-semibold"
+                >
                   View All Collections
                 </Link>
               </div>
