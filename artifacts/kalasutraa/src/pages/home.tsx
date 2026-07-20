@@ -294,18 +294,65 @@ export default function Home() {
       </section>
 
       {/* 4. Client Experiences */}
-      <section className="py-32 bg-secondary">
-        <div className="container mx-auto px-6 md:px-12">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="font-serif text-4xl text-foreground">Client Experiences</h2>
+      <section
+        className="py-32 relative overflow-hidden"
+        style={{
+          backgroundImage: 'url(/images/heritage-arch.jpg)',
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/62" />
+
+        <div className="relative z-10">
+          <ScrollReveal className="text-center mb-16 px-6">
+            <h2
+              className="font-semibold tracking-[0.18em] uppercase text-sm mb-4"
+              style={{ color: '#f5c97a', textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}
+            >Voices of Our Patrons</h2>
+            <h3
+              className="font-serif text-5xl md:text-6xl text-white"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.95)' }}
+            >Client Experiences</h3>
+            <div className="w-12 h-px bg-white/50 mx-auto mt-6" />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={t.id} delay={i * 0.1}>
-                <TestimonialCard {...t} />
-              </ScrollReveal>
-            ))}
+          {/* Marquee strip */}
+          <div className="w-full overflow-hidden">
+            <div className="flex animate-marquee-slow" style={{ width: 'max-content' }}>
+              {[...testimonials, ...testimonials].map((t, i) => (
+                <div
+                  key={`${t.id}-${i}`}
+                  className="flex-shrink-0 w-[380px] mx-4 flex flex-col items-center text-center p-8 rounded border border-white/15 bg-white/8 backdrop-blur-sm"
+                >
+                  <div className="flex gap-1 mb-6" style={{ color: '#f5c97a' }}>
+                    {Array.from({ length: t.rating }).map((_, si) => (
+                      <svg key={si} width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                      </svg>
+                    ))}
+                  </div>
+                  <blockquote className="font-serif text-lg leading-relaxed text-white/90 mb-8 flex-1">
+                    "{t.quote}"
+                  </blockquote>
+                  <div className="flex flex-col items-center gap-3">
+                    {t.avatar && (
+                      <img
+                        src={t.avatar}
+                        alt={t.name}
+                        className="w-12 h-12 rounded-full object-cover border-2 border-accent/40"
+                        loading="lazy"
+                      />
+                    )}
+                    <div>
+                      <p className="font-semibold text-xs tracking-wider uppercase text-white">{t.name}</p>
+                      <p className="text-xs tracking-widest uppercase mt-1" style={{ color: '#f5c97a99' }}>{t.city}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

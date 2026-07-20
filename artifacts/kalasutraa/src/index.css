@@ -199,3 +199,11 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Testimonials slow marquee */
+.animate-marquee-slow {
+  animation: marquee 70s linear infinite;
+}
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
