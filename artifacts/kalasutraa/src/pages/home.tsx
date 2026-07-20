@@ -133,9 +133,15 @@ export default function Home() {
 
         <div className="relative z-10 container mx-auto px-6 md:px-12">
           <ScrollReveal className="text-center mb-20">
-            <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4">Curated Portfolios</h2>
-            <h3 className="font-serif text-4xl md:text-5xl text-foreground">Timeless Art Forms</h3>
-            <div className="w-12 h-px bg-foreground mx-auto mt-8"></div>
+            <h2
+              className="text-xs font-semibold tracking-[0.2em] uppercase mb-4"
+              style={{ color: '#f5c97a', textShadow: '0 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)' }}
+            >Curated Portfolios</h2>
+            <h3
+              className="font-serif text-4xl md:text-5xl text-white"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.6)' }}
+            >Timeless Art Forms</h3>
+            <div className="w-12 h-px bg-white/80 mx-auto mt-8"></div>
           </ScrollReveal>
         </div>
 
@@ -185,8 +191,14 @@ export default function Home() {
                   </div>
                 </div>
 
-                <h3 className="font-serif text-xl text-foreground group-hover:text-primary transition-colors leading-snug mb-2">{c.title}</h3>
-                <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed max-w-[240px]">{c.description}</p>
+                <h3
+                  className="font-serif text-xl text-white group-hover:text-[#f5c97a] transition-colors leading-snug mb-2"
+                  style={{ textShadow: '0 1px 6px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.7)' }}
+                >{c.title}</h3>
+                <p
+                  className="text-xs text-white/90 line-clamp-2 leading-relaxed max-w-[240px]"
+                  style={{ textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}
+                >{c.description}</p>
               </a>
             ))}
           </div>
@@ -275,11 +287,21 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <ScrollReveal>
-              <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4">Masters of Craft</h2>
-              <h3 className="font-serif text-4xl text-foreground">The Hands Behind the Art</h3>
+              <h2
+                className="text-xs font-semibold tracking-[0.2em] uppercase mb-4"
+                style={{ color: '#6b3a1f', textShadow: '0 1px 6px rgba(255,245,230,0.9), 0 0 16px rgba(255,255,255,0.6)' }}
+              >Masters of Craft</h2>
+              <h3
+                className="font-serif text-4xl"
+                style={{ color: '#1c0e05', textShadow: '0 2px 8px rgba(255,245,220,0.95), 0 0 30px rgba(255,255,255,0.5)' }}
+              >The Hands Behind the Art</h3>
             </ScrollReveal>
             <ScrollReveal>
-              <Link href="/artisans" className="inline-flex items-center text-sm font-semibold tracking-widest uppercase text-foreground hover:text-primary transition-colors pb-1 border-b border-foreground hover:border-primary">
+              <Link
+                href="/artisans"
+                className="inline-flex items-center text-sm font-semibold tracking-widest uppercase hover:text-primary transition-colors pb-1 border-b hover:border-primary"
+                style={{ color: '#1c0e05', borderColor: '#1c0e05', textShadow: '0 1px 4px rgba(255,245,220,0.9)' }}
+              >
                 Meet All Artisans
               </Link>
             </ScrollReveal>
@@ -300,8 +322,14 @@ export default function Home() {
                       <span className="text-white uppercase tracking-widest text-xs font-semibold border border-white px-4 py-2 rounded-sm">View Profile</span>
                     </div>
                   </div>
-                  <h4 className="font-serif text-2xl text-foreground mb-1">{artisan.name}</h4>
-                  <p className="text-sm text-primary uppercase tracking-widest font-semibold">{artisan.craft}</p>
+                  <h4
+                    className="font-serif text-2xl mb-1"
+                    style={{ color: '#1c0e05', textShadow: '0 1px 6px rgba(255,245,220,0.95), 0 0 20px rgba(255,255,255,0.5)' }}
+                  >{artisan.name}</h4>
+                  <p
+                    className="text-sm uppercase tracking-widest font-semibold"
+                    style={{ color: '#7a3d10', textShadow: '0 1px 4px rgba(255,245,220,0.9)' }}
+                  >{artisan.craft}</p>
                 </div>
               </ScrollReveal>
             ))}
