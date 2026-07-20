@@ -36,7 +36,7 @@ export default function Shop() {
   return (
     <Layout>
       {/* Hero — looping video, no tint */}
-      <div className="relative overflow-hidden flex items-center justify-center text-white" style={{minHeight: '85vh'}}>
+      <div className="relative overflow-hidden flex items-center justify-center text-white" style={{minHeight: '52vh'}}>
         <video
           autoPlay
           loop
@@ -45,7 +45,7 @@ export default function Shop() {
           className="absolute inset-0 w-full h-full object-cover"
           src="/videos/hero-shop.mp4"
         />
-        <div className="relative z-10 text-center px-6 py-24">
+        <div className="relative z-10 text-center px-6 py-16">
           <h1 className="font-serif text-5xl md:text-6xl mb-4 drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">The Atelier</h1>
           <p className="text-gray-100 text-lg drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Discover masterpieces crafted by Indian hands.</p>
         </div>
