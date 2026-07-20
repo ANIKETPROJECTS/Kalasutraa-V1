@@ -358,7 +358,7 @@ export default function Home() {
       </section>
 
       {/* 5. Advisory CTA */}
-      <section className="pt-24 pb-0 bg-background border-t border-border overflow-hidden">
+      <section className="pt-24 pb-0 bg-background border-t border-border">
         <div className="container mx-auto px-6 md:px-12">
           <ScrollReveal className="max-w-4xl mx-auto text-center flex flex-col items-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl mb-6">Find the Piece That Truly Belongs in Your Space</h2>
@@ -371,9 +371,10 @@ export default function Home() {
         </div>
 
         {/* Instagram grid — post | reel | reel | post */}
-        <div className="grid grid-cols-2 md:grid-cols-4 items-end gap-0">
+        <div className="container mx-auto px-6 md:px-12 pb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
           {/* Corner post — left */}
-          <div className="overflow-hidden bg-black">
+          <div className="overflow-hidden rounded-lg bg-black shadow-md">
             <iframe
               src="https://www.instagram.com/p/DRw6GhRiM9V/embed/"
               width="100%"
@@ -387,7 +388,7 @@ export default function Home() {
             />
           </div>
           {/* Reel — left-center */}
-          <div className="overflow-hidden bg-black">
+          <div className="overflow-hidden rounded-lg bg-black shadow-md">
             <iframe
               src="https://www.instagram.com/reel/DaK3xCvtJqd/embed/"
               width="100%"
@@ -401,7 +402,7 @@ export default function Home() {
             />
           </div>
           {/* Reel — right-center */}
-          <div className="overflow-hidden bg-black">
+          <div className="overflow-hidden rounded-lg bg-black shadow-md">
             <iframe
               src="https://www.instagram.com/reel/DUvOrMNiPwn/embed/"
               width="100%"
@@ -415,7 +416,7 @@ export default function Home() {
             />
           </div>
           {/* Corner post — right */}
-          <div className="overflow-hidden bg-black">
+          <div className="overflow-hidden rounded-lg bg-black shadow-md">
             <iframe
               src="https://www.instagram.com/p/Da4cGl0o3S6/embed/"
               width="100%"
@@ -428,6 +429,7 @@ export default function Home() {
               loading="lazy"
             />
           </div>
+        </div>
         </div>
       </section>
 
