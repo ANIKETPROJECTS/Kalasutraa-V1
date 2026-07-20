@@ -378,7 +378,7 @@ export default function Home() {
             <iframe
               src="https://www.instagram.com/p/DRw6GhRiM9V/embed/"
               width="100%"
-              height="680"
+              height="520"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
@@ -391,7 +391,7 @@ export default function Home() {
             <iframe
               src="https://www.instagram.com/reel/DaK3xCvtJqd/embed/?autoplay=1&muted=1"
               width="100%"
-              height="760"
+              height="600"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
@@ -404,7 +404,7 @@ export default function Home() {
             <iframe
               src="https://www.instagram.com/reel/DUvOrMNiPwn/embed/?autoplay=1&muted=1"
               width="100%"
-              height="760"
+              height="600"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
@@ -417,7 +417,7 @@ export default function Home() {
             <iframe
               src="https://www.instagram.com/p/Da4cGl0o3S6/embed/"
               width="100%"
-              height="680"
+              height="520"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
