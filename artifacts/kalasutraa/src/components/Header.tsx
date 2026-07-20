@@ -44,7 +44,7 @@ export function Header() {
 
           {/* Logo */}
           <div className="flex-none">
-            <Link href="/">
+            <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <img
                 src="/images/logo.png"
                 alt="Kalasutraa"
