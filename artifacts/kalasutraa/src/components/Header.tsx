@@ -55,14 +55,28 @@ export function Header() {
 
           {/* Desktop Nav — grows to fill space, centered */}
           <nav className="hidden md:flex flex-1 items-center justify-center gap-7 lg:gap-9 text-[13px] tracking-[0.15em] uppercase font-semibold">
-            <Link href="/" className="hover:text-primary transition-colors whitespace-nowrap">Home</Link>
+            {/* nav link helper — active = primary colour + underline */}
+            <Link
+              href="/"
+              className={`relative whitespace-nowrap transition-colors pb-0.5 ${
+                location === '/'
+                  ? 'text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:rounded-full'
+                  : 'hover:text-primary'
+              }`}
+            >Home</Link>
 
             <div
               className="relative"
               onMouseEnter={() => setIsCollectionsOpen(true)}
               onMouseLeave={() => setIsCollectionsOpen(false)}
             >
-              <button className="flex items-center gap-1 hover:text-primary transition-colors whitespace-nowrap">
+              <button
+                className={`flex items-center gap-1 transition-colors whitespace-nowrap pb-0.5 relative ${
+                  location.startsWith('/shop')
+                    ? 'text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:rounded-full'
+                    : 'hover:text-primary'
+                }`}
+              >
                 Collections <ChevronDown size={12} className={`transition-transform duration-300 ${isCollectionsOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -89,9 +103,30 @@ export function Header() {
               </div>
             </div>
 
-            <Link href="/our-story" className="hover:text-primary transition-colors whitespace-nowrap">Our Story</Link>
-            <Link href="/artisans" className="hover:text-primary transition-colors whitespace-nowrap">Meet Artisans</Link>
-            <Link href="/consultation" className="hover:text-primary transition-colors whitespace-nowrap">Consultation</Link>
+            <Link
+              href="/our-story"
+              className={`relative whitespace-nowrap transition-colors pb-0.5 ${
+                location === '/our-story'
+                  ? 'text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:rounded-full'
+                  : 'hover:text-primary'
+              }`}
+            >Our Story</Link>
+            <Link
+              href="/artisans"
+              className={`relative whitespace-nowrap transition-colors pb-0.5 ${
+                location === '/artisans'
+                  ? 'text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:rounded-full'
+                  : 'hover:text-primary'
+              }`}
+            >Meet Artisans</Link>
+            <Link
+              href="/consultation"
+              className={`relative whitespace-nowrap transition-colors pb-0.5 ${
+                location === '/consultation'
+                  ? 'text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:rounded-full'
+                  : 'hover:text-primary'
+              }`}
+            >Consultation</Link>
           </nav>
 
           {/* Icons */}
@@ -140,19 +175,23 @@ export function Header() {
           </div>
 
           <div className="flex flex-col gap-5 text-base font-serif">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <Link href="/shop" className="hover:text-primary transition-colors">Shop All Collections</Link>
+            <Link href="/" className={`transition-colors border-b pb-3 ${location === '/' ? 'text-primary border-primary font-semibold' : 'border-transparent hover:text-primary'}`}>Home</Link>
+            <Link href="/shop" className={`transition-colors border-b pb-3 ${location.startsWith('/shop') ? 'text-primary border-primary font-semibold' : 'border-transparent hover:text-primary'}`}>Shop All Collections</Link>
             <div className="pl-4 flex flex-col gap-3 border-l border-border">
               {collections.map(c => (
-                <Link key={c.slug} href={`/shop/${c.slug}`} className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                <Link
+                  key={c.slug}
+                  href={`/shop/${c.slug}`}
+                  className={`text-sm transition-colors ${location === `/shop/${c.slug}` ? 'text-primary font-semibold' : 'text-muted-foreground hover:text-primary'}`}
+                >
                   {c.title}
                 </Link>
               ))}
             </div>
-            <Link href="/our-story" className="hover:text-primary transition-colors">Our Story</Link>
-            <Link href="/artisans" className="hover:text-primary transition-colors">Meet the Artisans</Link>
-            <Link href="/consultation" className="hover:text-primary transition-colors">Book a Consultation</Link>
-            <Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link>
+            <Link href="/our-story" className={`transition-colors border-b pb-3 ${location === '/our-story' ? 'text-primary border-primary font-semibold' : 'border-transparent hover:text-primary'}`}>Our Story</Link>
+            <Link href="/artisans" className={`transition-colors border-b pb-3 ${location === '/artisans' ? 'text-primary border-primary font-semibold' : 'border-transparent hover:text-primary'}`}>Meet the Artisans</Link>
+            <Link href="/consultation" className={`transition-colors border-b pb-3 ${location === '/consultation' ? 'text-primary border-primary font-semibold' : 'border-transparent hover:text-primary'}`}>Book a Consultation</Link>
+            <Link href="/contact" className={`transition-colors border-b pb-3 ${location === '/contact' ? 'text-primary border-primary font-semibold' : 'border-transparent hover:text-primary'}`}>Contact Us</Link>
           </div>
 
           <div className="mt-auto pt-8 flex gap-5 border-t border-border">
