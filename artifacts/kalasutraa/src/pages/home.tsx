@@ -134,11 +134,11 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-6 md:px-12">
           <ScrollReveal className="text-center mb-20">
             <h2
-              className="text-xs font-semibold tracking-[0.2em] uppercase mb-4"
+              className="text-sm font-semibold tracking-[0.2em] uppercase mb-5"
               style={{ color: '#f5c97a', textShadow: '0 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)' }}
             >Curated Portfolios</h2>
             <h3
-              className="font-serif text-4xl md:text-5xl text-white"
+              className="font-serif text-5xl md:text-6xl lg:text-7xl text-white"
               style={{ textShadow: '0 2px 8px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.6)' }}
             >Timeless Art Forms</h3>
             <div className="w-12 h-px bg-white/80 mx-auto mt-8"></div>
@@ -153,26 +153,26 @@ export default function Home() {
               <a
                 key={`${c.slug}-${i}`}
                 href={`/shop/${c.slug}`}
-                className="group flex flex-col items-center text-center mx-10 w-80 shrink-0"
+                className="group flex flex-col items-center text-center mx-12 w-[440px] shrink-0"
               >
                 {/* Decorative frame */}
-                <div className="relative mb-7" style={{ width: 280, height: 280 }}>
+                <div className="relative mb-9" style={{ width: 380, height: 380 }}>
                   {/* Outermost dashed orbit — rotates slowly on hover */}
                   <div className="absolute rounded-full border border-dashed border-[#8A6D3B]/40 transition-all duration-700 group-hover:border-[#8A6D3B]/70"
-                    style={{ inset: -14 }} />
+                    style={{ inset: -18 }} />
                   {/* Second solid thin ring */}
                   <div className="absolute rounded-full border border-[#8A6D3B]/50 transition-all duration-500 group-hover:border-[#8A6D3B]"
-                    style={{ inset: -6 }} />
+                    style={{ inset: -8 }} />
                   {/* Diamond gems at cardinal points (sit on the second ring) */}
                   {[
-                    { top: -10,  left: '50%',  transform: 'translateX(-50%) rotate(45deg)' },
-                    { bottom: -10, left: '50%', transform: 'translateX(-50%) rotate(45deg)' },
-                    { left: -10, top: '50%',   transform: 'translateY(-50%) rotate(45deg)' },
-                    { right: -10, top: '50%',  transform: 'translateY(-50%) rotate(45deg)' },
+                    { top: -13,  left: '50%',  transform: 'translateX(-50%) rotate(45deg)' },
+                    { bottom: -13, left: '50%', transform: 'translateX(-50%) rotate(45deg)' },
+                    { left: -13, top: '50%',   transform: 'translateY(-50%) rotate(45deg)' },
+                    { right: -13, top: '50%',  transform: 'translateY(-50%) rotate(45deg)' },
                   ].map((style, j) => (
                     <div
                       key={j}
-                      className="absolute w-[10px] h-[10px] bg-[#8A6D3B] opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute w-[13px] h-[13px] bg-[#8A6D3B] opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                       style={{ ...style, position: 'absolute' }}
                     />
                   ))}
@@ -192,11 +192,11 @@ export default function Home() {
                 </div>
 
                 <h3
-                  className="font-serif text-xl text-white group-hover:text-[#f5c97a] transition-colors leading-snug mb-2"
+                  className="font-serif text-2xl text-white group-hover:text-[#f5c97a] transition-colors leading-snug mb-3"
                   style={{ textShadow: '0 1px 6px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.7)' }}
                 >{c.title}</h3>
                 <p
-                  className="text-xs text-white/90 line-clamp-2 leading-relaxed max-w-[240px]"
+                  className="text-sm text-white/90 line-clamp-2 leading-relaxed max-w-[360px]"
                   style={{ textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}
                 >{c.description}</p>
               </a>
