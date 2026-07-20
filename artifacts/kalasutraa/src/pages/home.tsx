@@ -378,41 +378,38 @@ export default function Home() {
             <iframe
               src="https://www.instagram.com/p/DRw6GhRiM9V/embed/"
               width="100%"
-              height="460"
+              height="680"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
               className="block w-full"
-              loading="lazy"
             />
           </div>
           {/* Reel — left-center */}
           <div className="overflow-hidden rounded-lg bg-black shadow-md">
             <iframe
-              src="https://www.instagram.com/reel/DaK3xCvtJqd/embed/"
+              src="https://www.instagram.com/reel/DaK3xCvtJqd/embed/?autoplay=1&muted=1"
               width="100%"
-              height="460"
+              height="680"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
               className="block w-full"
-              loading="lazy"
             />
           </div>
           {/* Reel — right-center */}
           <div className="overflow-hidden rounded-lg bg-black shadow-md">
             <iframe
-              src="https://www.instagram.com/reel/DUvOrMNiPwn/embed/"
+              src="https://www.instagram.com/reel/DUvOrMNiPwn/embed/?autoplay=1&muted=1"
               width="100%"
-              height="460"
+              height="680"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
               className="block w-full"
-              loading="lazy"
             />
           </div>
           {/* Corner post — right */}
@@ -420,13 +417,12 @@ export default function Home() {
             <iframe
               src="https://www.instagram.com/p/Da4cGl0o3S6/embed/"
               width="100%"
-              height="460"
+              height="680"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
               className="block w-full"
-              loading="lazy"
             />
           </div>
         </div>
