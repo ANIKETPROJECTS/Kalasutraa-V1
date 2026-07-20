@@ -130,6 +130,7 @@ export default function Home() {
           backgroundPosition: 'center',
         }}
       >
+        <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 container mx-auto px-6 md:px-12">
           <ScrollReveal className="text-center mb-20">
@@ -333,24 +334,24 @@ export default function Home() {
           backgroundPosition: 'center',
         }}
       >
+        <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 container mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <ScrollReveal>
               <h2
                 className="text-xs font-semibold tracking-[0.2em] uppercase mb-4"
-                style={{ color: '#6b3a1f', textShadow: '0 1px 6px rgba(255,245,230,0.9), 0 0 16px rgba(255,255,255,0.6)' }}
+                style={{ color: '#f5c97a', textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}
               >Masters of Craft</h2>
               <h3
-                className="font-serif text-4xl"
-                style={{ color: '#1c0e05', textShadow: '0 2px 8px rgba(255,245,220,0.95), 0 0 30px rgba(255,255,255,0.5)' }}
+                className="font-serif text-4xl text-white"
+                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.95)' }}
               >The Hands Behind the Art</h3>
             </ScrollReveal>
             <ScrollReveal>
               <Link
                 href="/artisans"
-                className="inline-flex items-center text-sm font-semibold tracking-widest uppercase hover:text-primary transition-colors pb-1 border-b hover:border-primary"
-                style={{ color: '#1c0e05', borderColor: '#1c0e05', textShadow: '0 1px 4px rgba(255,245,220,0.9)' }}
+                className="inline-flex items-center text-sm font-semibold tracking-widest uppercase text-white/90 hover:text-accent transition-colors pb-1 border-b border-white/60 hover:border-accent"
               >
                 Meet All Artisans
               </Link>
