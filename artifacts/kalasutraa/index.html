@@ -24,38 +24,39 @@
         #loading-screen {
           position: fixed;
           inset: 0;
-          background: #1a0e08;
+          background: #F2EDE4;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           z-index: 9999;
-          opacity: 1;
-          transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+          /* slide-out via transform — direction set by JS */
+          transition: transform 1.1s cubic-bezier(0.76, 0, 0.24, 1);
           overflow: hidden;
+          will-change: transform;
         }
-        #loading-screen.fade-out {
-          opacity: 0;
+        #loading-screen.slide-out {
           pointer-events: none;
         }
         .loader-mandala {
           position: relative;
-          width: 120px;
-          height: 120px;
+          width: 140px;
+          height: 140px;
           margin-bottom: 32px;
         }
         .loader-wheel {
           width: 100%;
           height: 100%;
           object-fit: contain;
-          filter: sepia(1) saturate(2.5) hue-rotate(5deg) brightness(1.15);
-          animation: loaderSpinCW 6s linear infinite;
+          /* warm light-brown tint */
+          filter: sepia(0.6) saturate(1.8) hue-rotate(358deg) brightness(0.78);
+          animation: loaderSpinCW 7s linear infinite;
           transform-origin: center center;
         }
         @keyframes loaderSpinCW { to { transform: rotate(360deg); } }
         .loader-wordmark {
           font-family: 'IM Fell English', Georgia, serif;
-          color: #F5F0E8;
+          color: #2C1A0E;
           letter-spacing: 0.3em;
           font-size: 1.35rem;
           text-transform: uppercase;
@@ -63,7 +64,7 @@
         }
         .loader-tagline {
           font-family: Georgia, serif;
-          color: #B8762A;
+          color: #7A4E2D;
           font-size: 0.62rem;
           letter-spacing: 0.28em;
           text-transform: uppercase;
@@ -71,9 +72,9 @@
           font-style: italic;
         }
         .loader-bar-wrap {
-          width: 120px;
+          width: 140px;
           height: 1px;
-          background: rgba(184,118,42,0.18);
+          background: rgba(122,78,45,0.18);
           margin-top: 8px;
           position: relative;
           overflow: hidden;
@@ -82,9 +83,9 @@
           position: absolute;
           top: 0; left: 0;
           height: 100%;
-          background: linear-gradient(90deg, transparent, #B8762A, transparent);
+          background: linear-gradient(90deg, transparent, #8B5C2A, transparent);
           width: 60%;
-          animation: loaderBarSweep 1.6s ease-in-out infinite;
+          animation: loaderBarSweep 1.8s ease-in-out infinite;
         }
         @keyframes loaderBarSweep {
           from { transform: translateX(-100%); }
@@ -93,7 +94,7 @@
         .loader-glow {
           position: absolute;
           inset: 0;
-          background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(184,118,42,0.08) 0%, transparent 70%);
+          background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(122,78,45,0.07) 0%, transparent 70%);
           pointer-events: none;
         }
       }
@@ -115,18 +116,35 @@
     <script type="module" src="/src/main.tsx"></script>
     <script>
       var _loaderHidden = false;
+      var _loaderStart = Date.now();
+      var MIN_DISPLAY = 3200; // ms — minimum time the loader stays visible
+
       function _hideLoader() {
         if (_loaderHidden) return;
-        _loaderHidden = true;
-        var el = document.getElementById('loading-screen');
-        if (!el) return;
+        var elapsed = Date.now() - _loaderStart;
+        var remaining = Math.max(0, MIN_DISPLAY - elapsed);
         setTimeout(function () {
-          el.classList.add('fade-out');
-          setTimeout(function () { el.style.display = 'none'; }, 950);
-        }, 200);
+          if (_loaderHidden) return;
+          _loaderHidden = true;
+          var el = document.getElementById('loading-screen');
+          if (!el) return;
+          // pick a random slide direction
+          var dirs = [
+            'translateY(-105vh)',
+            'translateY(105vh)',
+            'translateX(-105vw)',
+            'translateX(105vw)'
+          ];
+          var dir = dirs[Math.floor(Math.random() * dirs.length)];
+          el.style.transform = dir;
+          el.classList.add('slide-out');
+          setTimeout(function () { el.style.display = 'none'; }, 1150);
+        }, remaining);
       }
-      setTimeout(_hideLoader, 4000);
-      window.addEventListener('load', function () { setTimeout(_hideLoader, 100); });
+
+      // hard cap: 7 s in case load event never fires
+      setTimeout(_hideLoader, 7000);
+      window.addEventListener('load', _hideLoader);
       window.__kalasutraa_ready = _hideLoader;
     </script>
   </body>
