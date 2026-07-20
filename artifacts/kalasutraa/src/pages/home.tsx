@@ -373,56 +373,56 @@ export default function Home() {
         {/* Instagram grid — post | reel | reel | post */}
         <div className="container mx-auto px-6 md:px-12 pb-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-          {/* Corner post — left */}
-          <div className="overflow-hidden rounded-lg bg-black shadow-md">
+          {/* Corner post — left: clip header (~90px) + footer, show only image */}
+          <div className="rounded-lg bg-black shadow-md" style={{ overflow: 'hidden', height: '300px' }}>
             <iframe
               src="https://www.instagram.com/p/DRw6GhRiM9V/embed/"
               width="100%"
-              height="520"
+              height="560"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
-              className="block w-full"
+              style={{ display: 'block', marginTop: '-90px' }}
             />
           </div>
-          {/* Reel — left-center */}
-          <div className="rounded-lg bg-black shadow-md" style={{ overflow: 'clip' }}>
+          {/* Reel — left-center: clip header (~110px, has audio title) + footer */}
+          <div className="rounded-lg bg-black shadow-md" style={{ overflow: 'hidden', height: '480px' }}>
             <iframe
               src="https://www.instagram.com/reel/DaK3xCvtJqd/embed/?autoplay=1&muted=1"
               width="100%"
-              height="600"
+              height="750"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
-              className="block w-full"
+              style={{ display: 'block', marginTop: '-110px' }}
             />
           </div>
-          {/* Reel — right-center */}
-          <div className="rounded-lg bg-black shadow-md" style={{ overflow: 'clip' }}>
+          {/* Reel — right-center: clip header (~90px) + footer */}
+          <div className="rounded-lg bg-black shadow-md" style={{ overflow: 'hidden', height: '480px' }}>
             <iframe
               src="https://www.instagram.com/reel/DUvOrMNiPwn/embed/?autoplay=1&muted=1"
               width="100%"
-              height="600"
+              height="750"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
-              className="block w-full"
+              style={{ display: 'block', marginTop: '-90px' }}
             />
           </div>
-          {/* Corner post — right */}
-          <div className="overflow-hidden rounded-lg bg-black shadow-md">
+          {/* Corner post — right: clip header (~90px) + footer, show only image */}
+          <div className="rounded-lg bg-black shadow-md" style={{ overflow: 'hidden', height: '300px' }}>
             <iframe
               src="https://www.instagram.com/p/Da4cGl0o3S6/embed/"
               width="100%"
-              height="520"
+              height="560"
               frameBorder="0"
               scrolling="no"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
-              className="block w-full"
+              style={{ display: 'block', marginTop: '-90px' }}
             />
           </div>
         </div>
