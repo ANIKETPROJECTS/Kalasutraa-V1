@@ -269,8 +269,19 @@ export default function Home() {
       </section>
 
       {/* 6. Artisan Preview */}
-      <section className="py-32 bg-background">
-        <div className="container mx-auto px-6 md:px-12">
+      <section
+        className="py-32 relative overflow-hidden"
+        style={{
+          backgroundImage: 'url(/images/elephant-craft.jpg)',
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Translucent wash — lighter than the arch section to let the pale stone show */}
+        <div className="absolute inset-0 bg-[#f5ede4]/82 pointer-events-none" />
+
+        <div className="relative z-10 container mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <ScrollReveal>
               <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4">Masters of Craft</h2>
