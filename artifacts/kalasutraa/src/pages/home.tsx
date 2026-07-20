@@ -358,9 +358,9 @@ export default function Home() {
       </section>
 
       {/* 5. Advisory CTA */}
-      <section className="py-24 bg-background border-y border-border">
+      <section className="pt-24 pb-0 bg-background border-t border-border overflow-hidden">
         <div className="container mx-auto px-6 md:px-12">
-          <ScrollReveal className="max-w-4xl mx-auto text-center flex flex-col items-center">
+          <ScrollReveal className="max-w-4xl mx-auto text-center flex flex-col items-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl mb-6">Find the Piece That Truly Belongs in Your Space</h2>
             <p className="text-muted-foreground mb-10 max-w-2xl text-lg">
               Our curators assist collectors, designers, and enthusiasts in acquiring the perfect heritage artwork. Schedule a complimentary video session.
@@ -368,6 +368,66 @@ export default function Home() {
             <Button href="/consultation" variant="primary">Schedule Consultation</Button>
             <p className="text-xs text-muted-foreground mt-4 uppercase tracking-widest font-semibold">No obligation to purchase</p>
           </ScrollReveal>
+        </div>
+
+        {/* Instagram grid — post | reel | reel | post */}
+        <div className="grid grid-cols-2 md:grid-cols-4 items-end gap-0">
+          {/* Corner post — left */}
+          <div className="overflow-hidden bg-black">
+            <iframe
+              src="https://www.instagram.com/p/DRw6GhRiM9V/embed/"
+              width="100%"
+              height="540"
+              frameBorder="0"
+              scrolling="no"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+              className="block w-full"
+              loading="lazy"
+            />
+          </div>
+          {/* Reel — left-center */}
+          <div className="overflow-hidden bg-black">
+            <iframe
+              src="https://www.instagram.com/reel/DaK3xCvtJqd/embed/"
+              width="100%"
+              height="740"
+              frameBorder="0"
+              scrolling="no"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+              className="block w-full"
+              loading="lazy"
+            />
+          </div>
+          {/* Reel — right-center */}
+          <div className="overflow-hidden bg-black">
+            <iframe
+              src="https://www.instagram.com/reel/DUvOrMNiPwn/embed/"
+              width="100%"
+              height="740"
+              frameBorder="0"
+              scrolling="no"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+              className="block w-full"
+              loading="lazy"
+            />
+          </div>
+          {/* Corner post — right */}
+          <div className="overflow-hidden bg-black">
+            <iframe
+              src="https://www.instagram.com/p/Da4cGl0o3S6/embed/"
+              width="100%"
+              height="540"
+              frameBorder="0"
+              scrolling="no"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+              className="block w-full"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
