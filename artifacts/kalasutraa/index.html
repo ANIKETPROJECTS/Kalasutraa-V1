@@ -57,19 +57,22 @@
         .loader-wordmark {
           font-family: 'IM Fell English', Georgia, serif;
           color: #2C1A0E;
-          letter-spacing: 0.3em;
-          font-size: 1.35rem;
+          letter-spacing: 0.45em;
+          font-size: 2rem;
           text-transform: uppercase;
           margin-bottom: 10px;
+          font-weight: 400;
+          text-shadow: 0 1px 2px rgba(44,26,14,0.12);
         }
         .loader-tagline {
-          font-family: Georgia, serif;
-          color: #7A4E2D;
-          font-size: 0.62rem;
-          letter-spacing: 0.28em;
+          font-family: 'IM Fell English', Georgia, serif;
+          color: #8B5C2A;
+          font-size: 0.78rem;
+          letter-spacing: 0.38em;
           text-transform: uppercase;
-          margin-bottom: 36px;
+          margin-bottom: 38px;
           font-style: italic;
+          opacity: 0.85;
         }
         .loader-bar-wrap {
           width: 140px;
@@ -117,7 +120,7 @@
     <script>
       var _loaderHidden = false;
       var _loaderStart = Date.now();
-      var MIN_DISPLAY = 3200; // ms — minimum time the loader stays visible
+      var MIN_DISPLAY = 2000; // ms — minimum time the loader stays visible
 
       function _hideLoader() {
         if (_loaderHidden) return;
