@@ -459,12 +459,20 @@ export default function Home() {
       </section>
 
       {/* 8. Newsletter */}
-      <section className="py-32 bg-[url('https://picsum.photos/seed/texture/1920/1080')] bg-cover bg-center relative">
-        <div className="absolute inset-0 bg-background/95 backdrop-blur-sm"></div>
+      <section
+        className="py-32 relative overflow-hidden"
+        style={{
+          backgroundImage: 'url(/images/elephant-craft.jpg)',
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
         <div className="container mx-auto px-6 relative z-10">
           <ScrollReveal className="max-w-2xl mx-auto text-center">
-            <h2 className="font-serif text-4xl mb-4">Join the Atelier</h2>
-            <p className="text-muted-foreground mb-10">
+            <h2 className="font-serif text-4xl mb-4 text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>Join the Atelier</h2>
+            <p className="mb-10 text-white/70">
               Sign up and receive 10% off your first order, along with stories of our artisans and early access to new collections.
             </p>
             <NewsletterSignup />
