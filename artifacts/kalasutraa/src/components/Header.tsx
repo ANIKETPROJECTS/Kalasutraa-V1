@@ -90,7 +90,7 @@ export function Header() {
                       key={c.slug}
                       href={`/shop/${c.slug}`}
                       className="group relative block overflow-hidden rounded-sm normal-case"
-                      style={{ height: 110 }}
+                      style={{ height: 155 }}
                     >
                       {/* background image */}
                       <div
