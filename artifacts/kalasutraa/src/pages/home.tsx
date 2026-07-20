@@ -63,7 +63,7 @@ export default function Home() {
   return (
     <Layout>
       {/* 1. Hero */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center bg-espresso text-white overflow-hidden">
+      <section className="relative h-screen min-h-[700px] flex items-center justify-center bg-espresso text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           {heroImages.map((src, i) => (
             <img
