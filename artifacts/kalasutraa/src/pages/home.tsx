@@ -206,38 +206,88 @@ export default function Home() {
       </section>
 
       {/* 3. Editorial Block */}
-      <section className="py-32 bg-espresso text-white relative">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="text-center mb-20">
-            <p className="font-serif text-2xl md:text-3xl text-accent italic mb-6">"{CONTACT_INFO.mottoSanskrit}"</p>
-            <h2 className="font-serif text-4xl md:text-5xl">Why These Art Forms Exist</h2>
-          </div>
+      <section className="relative py-36 text-white overflow-hidden">
+        {/* ── Video background ── */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/images/editorial-bg.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        {/* layered overlay: deep espresso tint so text stays legible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/72" />
+        {/* subtle warm vignette */}
+        <div className="absolute inset-0"
+          style={{ background: 'radial-gradient(ellipse 80% 70% at 50% 50%, rgba(90,40,10,0.18) 0%, transparent 75%)' }} />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-            <ScrollReveal delay={0.1}>
-              <div className="border-t border-accent pt-6">
-                <h3 className="text-xl font-serif mb-4">Art Rooted in Belief</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  These aren't just decorative items. Whether it's the sacred geometry of Warli or the devotion poured into a Vrindavan carving, every piece was born to communicate with the divine before it was meant to be seen by man.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <div className="border-t border-accent pt-6">
-                <h3 className="text-xl font-serif mb-4">Carried by Generations</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Techniques like Dhokra metal casting are over 4,000 years old. Passed strictly from parent to child, these skills represent an unbroken chain of human knowledge and patience.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.3}>
-              <div className="border-t border-accent pt-6">
-                <h3 className="text-xl font-serif mb-4">Why Preservation Matters</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  In an era of mass production, true craftsmanship is endangered. By acquiring these pieces, you don't just decorate your home—you sustain villages and ensure these stories survive.
-                </p>
-              </div>
-            </ScrollReveal>
+        <div className="relative z-10 container mx-auto px-6 md:px-12">
+
+          {/* Heading */}
+          <ScrollReveal className="text-center mb-20">
+            <p
+              className="font-serif text-3xl md:text-4xl italic mb-5 leading-snug"
+              style={{ color: '#E8C07A', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}
+            >
+              ❝{CONTACT_INFO.mottoSanskrit}❞
+            </p>
+            <h2
+              className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6"
+              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.7)' }}
+            >Why These Art Forms Exist</h2>
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-px w-16 bg-[#C9973A]/60" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#C9973A]/80" />
+              <div className="h-px w-16 bg-[#C9973A]/60" />
+            </div>
+          </ScrollReveal>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            {[
+              {
+                num: '01',
+                title: 'Art Rooted in Belief',
+                body: "These aren't just decorative items. Whether it's the sacred geometry of Warli or the devotion poured into a Vrindavan carving, every piece was born to communicate with the divine before it was meant to be seen by man.",
+                delay: 0.1,
+              },
+              {
+                num: '02',
+                title: 'Carried by Generations',
+                body: 'Techniques like Dhokra metal casting are over 4,000 years old. Passed strictly from parent to child, these skills represent an unbroken chain of human knowledge and patience.',
+                delay: 0.2,
+              },
+              {
+                num: '03',
+                title: 'Why Preservation Matters',
+                body: "In an era of mass production, true craftsmanship is endangered. By acquiring these pieces, you don't just decorate your home—you sustain villages and ensure these stories survive.",
+                delay: 0.3,
+              },
+            ].map(card => (
+              <ScrollReveal key={card.num} delay={card.delay}>
+                <div className="group relative h-full rounded-sm border border-white/10 bg-white/5 backdrop-blur-sm p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-white/10 hover:border-[#C9973A]/50 hover:shadow-[0_8px_40px_rgba(0,0,0,0.45)]">
+                  {/* accent top bar that grows on hover */}
+                  <div className="absolute top-0 left-8 right-8 h-px bg-[#C9973A]/30 transition-all duration-500 group-hover:left-0 group-hover:right-0 group-hover:bg-[#C9973A]/70" />
+
+                  {/* ordinal number */}
+                  <span
+                    className="block font-serif text-5xl font-bold mb-5 leading-none select-none transition-colors duration-300"
+                    style={{ color: 'rgba(201,151,58,0.20)' }}
+                  >{card.num}</span>
+
+                  <h3 className="font-serif text-xl md:text-2xl text-white mb-4 group-hover:text-[#E8C07A] transition-colors duration-300">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-white/65 leading-relaxed group-hover:text-white/85 transition-colors duration-300">
+                    {card.body}
+                  </p>
+
+                  {/* bottom glow dot */}
+                  <div className="absolute bottom-6 right-7 w-2 h-2 rounded-full bg-[#C9973A]/0 group-hover:bg-[#C9973A]/60 transition-all duration-500 shadow-[0_0_8px_rgba(201,151,58,0.8)]" />
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
