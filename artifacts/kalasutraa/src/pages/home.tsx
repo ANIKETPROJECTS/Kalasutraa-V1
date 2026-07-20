@@ -3,7 +3,6 @@ import { useSEO } from '../hooks/use-seo';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import { ScrollReveal } from '../components/ScrollReveal';
-import { CollectionCard } from '../components/CollectionCard';
 import { TestimonialCard } from '../components/TestimonialCard';
 import { NewsletterSignup } from '../components/NewsletterSignup';
 import { collections } from '../data/collections';
@@ -121,20 +120,42 @@ export default function Home() {
       {/* Divider */}
       <div className="h-px w-full bg-[#8A6D3B]/30"></div>
 
-      {/* 2. Collections Grid */}
-      <section className="py-32 bg-background">
+      {/* 2. Collections Marquee */}
+      <section className="py-32 bg-background overflow-hidden">
         <div className="container mx-auto px-6 md:px-12">
           <ScrollReveal className="text-center mb-20">
             <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4">Curated Portfolios</h2>
             <h3 className="font-serif text-4xl md:text-5xl text-foreground">Timeless Art Forms</h3>
             <div className="w-12 h-px bg-foreground mx-auto mt-8"></div>
           </ScrollReveal>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-            {collections.map((collection, i) => (
-              <ScrollReveal key={collection.slug} delay={i * 0.1}>
-                <CollectionCard {...collection} />
-              </ScrollReveal>
+        {/* Marquee strip — full bleed */}
+        <div className="relative w-full">
+          {/* fade edges */}
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-10 bg-gradient-to-r from-background to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-10 bg-gradient-to-l from-background to-transparent" />
+
+          <div className="flex animate-marquee" style={{ width: 'max-content' }}>
+            {[...collections, ...collections].map((c, i) => (
+              <a
+                key={`${c.slug}-${i}`}
+                href={`/shop/${c.slug}`}
+                className="group flex flex-col items-center text-center mx-8 w-56 shrink-0"
+              >
+                {/* Circular frame */}
+                <div className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-[#8A6D3B]/30 group-hover:ring-[#8A6D3B] transition-all duration-500 shadow-lg mb-5">
+                  <img
+                    src={c.heroImage}
+                    alt={c.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 rounded-full bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                </div>
+                <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors leading-snug mb-1">{c.title}</h3>
+                <p className="text-[11px] text-muted-foreground line-clamp-2 leading-relaxed">{c.description}</p>
+              </a>
             ))}
           </div>
         </div>
